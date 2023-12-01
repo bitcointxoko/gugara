@@ -9,13 +9,15 @@
 </script>
 
 <div
-  class="basis-1/3 p-2 sm:p-4 md:p-6 gap-4 rounded-lg border border-solid hover:border-amber-500 bg-white text-black font-mono max-w-lg flex-auto"
+  class="basis-1/3 p-2 sm:p-4 md:p-6 gap-4 rounded-lg border border-solid hover:border-bright bg-card-bright font-mono max-w-lg flex-auto"
 >
-  <h2 class="text-xl text-bold">{$_("greeting.welcome")}</h2>
-  <div class="text-gray-600 mt-2 mx-2 justify-center">
+  <h2 class="ml mt text-xl text-bold text-title-bright">
+    {$_("greeting.welcome")}
+  </h2>
+  <div class="text-muted-bright mt-2 mx-2 justify-center">
     <p class="my-2">
       <a href="{PUBLIC_NOSTR_SHORT_NOTE_CLIENT}{PUBLIC_PUBKEY}"
-        ><span class="font-bold hover:text-amber-500">{PUBLIC_NAME}</span></a
+        ><span class="font-bold hover:text-highlight">{PUBLIC_NAME}</span></a
       >
       es un espacio abierto de intercambio y aprendizaje. Surgió de manera bastante
       espontánea al juntarse unos pocos
@@ -34,8 +36,8 @@
     </p>
   </div>
   <!-- IF defining PUBLIC_ABOUT in .env then uncomment the next block and delete the previous div -->
-  <!-- <div class="text-gray-600 mt-2 mx-2 justify-center">
-        <p class="my-2"> <a href="{PUBLIC_NOSTR_SHORT_NOTE_CLIENT}{PUBLIC_PUBKEY}"><span class="font-bold hover:text-amber-500">{PUBLIC_NAME}</span></a>
+  <!-- <div class="text-muted-bright mt-2 mx-2 justify-center">
+        <p class="my-2"> <a href="{PUBLIC_NOSTR_SHORT_NOTE_CLIENT}{PUBLIC_PUBKEY}"><span class="font-bold hover:text-highlight">{PUBLIC_NAME}</span></a>
         {PUBLIC_ABOUT}</p>
     </div> -->
 </div>

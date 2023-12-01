@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+.tech {
+    font-family: 'Share Tech Mono';
+}
+
+@layer utilities {
+	.text-muted-bright {
+		@apply text-gray-500;
+	}
+    
+    .text-title-bright {
+		@apply text-gray-700;
+	}
+
+    .text-highlight {
+		@apply text-amber-500;
+	}
+
+    .bg-card-bright {
+		@apply bg-white;
+	}
+
+    .bg-button-bright {
+		@apply bg-amber-600;
+	}
+
+    .bg-button-dark {
+		@apply bg-emerald-800;
+	}
+
+	.border-bright {
+		@apply border-amber-500;
+	}
+}
