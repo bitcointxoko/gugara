@@ -2,11 +2,10 @@
   import Main from "../components/Main.svelte";
 </script>
 
-<Main/>
-
+<Main />
 
 <style lang="postcss">
-    :global(html) {
-      background-color: theme(colors.emerald.800);
-    }
-  </style>
+  :global(html) {
+    background-color: theme(colors.emerald.800);
+  }
+</style>
