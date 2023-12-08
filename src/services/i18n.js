@@ -31,6 +31,10 @@ function setupI18n({ withLocale: _locale } = { withLocale: "en" }) {
         title: "+ New wallet ⚡️",
         description: "Create a new LNbits wallet",
       },
+      store: {
+        title: "+ New store",
+        description: "Create a new BTCPay store",
+      },
       groupChat: {
         title: "SimpleX 💬",
         description: "Join the SimpleX group",
@@ -89,6 +93,10 @@ function setupI18n({ withLocale: _locale } = { withLocale: "en" }) {
         title: "+ Nueva billetera ⚡️",
         description: "Crear una nueva billetera LNbits",
       },
+      store: {
+        title: "+ Nueva tienda",
+        description: "Crear una nueva tienda BTCPay",
+      },
       groupChat: {
         title: "SimpleX 💬",
         description: "Únete al grupo SimpleX",
@@ -146,6 +154,10 @@ function setupI18n({ withLocale: _locale } = { withLocale: "en" }) {
       wallet: {
         title: "+ 新錢包 ⚡️",
         description: "創建一個新的 LNbits 錢包",
+      },
+      store: {
+        title: "+ 新商店",
+        description: "創建一個新的 BTCPay 商店",
       },
       groupChat: {
         title: "SimpleX 💬",

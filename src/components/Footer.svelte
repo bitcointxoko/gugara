@@ -34,7 +34,7 @@
     </form>
   </div>
   <div
-    class="p-2 sm:p-4 md:p-6 rounded-lg border border-solid hover:border-bright bg-slate-800 text-white text-xl font-mono max-w-sm"
+    class="flex p-2 sm:p-4 md:p-6 rounded-lg border border-solid hover:border-bright bg-slate-800 text-white text-xl text-center font-mono max-w-sm"
   >
     <a href={PUBLIC_GITHUB}>
       <p class="pt-1">{$_("footer.contribute")}</p>

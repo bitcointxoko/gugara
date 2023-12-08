@@ -34,11 +34,11 @@
   <h2 class="ml mt px-2 sm:px-4 md:px-6 py-2 text-xl text-title-bright">
     {$_("nodes.title")}
   </h2>
-  <div class="grid grid-cols-2 align-bottom">
+  <div class="grid align-bottom">
     <a href="{PUBLIC_LIGHTNING_EXPLORER}{PUBLIC_NODE_PUBKEY_1}">
       {#if node1}
         <div
-          class="p-10 text-emerald-500 bg-amber-400 hover:bg-amber-600 hover:text-emerald-300 hover:drop-shadow-lg shadow rounded-l-lg align-bottom"
+          class="p-10 flex flex-col gap-2 text-center text-emerald-500 hover:text-emerald-300 bg-amber-400 hover:bg-amber-600 hover:drop-shadow-lg shadow rounded-lg align-bottom"
         >
           <h3 class="font-bold">{node1.alias}</h3>
           <p>{$_("nodes.channels")}{node1.active_channel_count}</p>
@@ -52,7 +52,7 @@
         </h3>
       {/if}
     </a>
-    <a href="{PUBLIC_LIGHTNING_EXPLORER}{PUBLIC_NODE_PUBKEY_2}">
+    <!-- <a href="{PUBLIC_LIGHTNING_EXPLORER}{PUBLIC_NODE_PUBKEY_2}">
       {#if node2}
         <div
           class="p-10 text-amber-300 bg-emerald-500 hover:bg-emerald-600 hover:text-amber-300 hover:drop-shadow-lg shadow rounded-r-lg align-bottom"
@@ -68,6 +68,6 @@
           {$_("loading")}
         </h3>
       {/if}
-    </a>
+    </a> -->
   </div>
 </div>

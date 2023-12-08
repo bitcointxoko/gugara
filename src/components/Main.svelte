@@ -4,6 +4,7 @@
   import Notes from "./Notes.svelte";
   import Mint from "./Mint.svelte";
   import NewWallet from "./NewWallet.svelte";
+  import Btcpay from "./Btcpay.svelte";
   import Meetups from "./Meetups.svelte";
   import Nodes from "./Nodes.svelte";
   import Nostrscript from "./Nostrscript.svelte";
@@ -25,6 +26,7 @@
       <Nostrscript />
       <NewWallet />
       <GroupChat />
+      <Btcpay />
       <Mutiny />
       <Nodes />
     </div>
