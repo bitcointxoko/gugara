@@ -34,7 +34,7 @@
   class="basis-1/3 p-2 sm:p-4 md:p-6 gap-4 rounded-lg border border-solid hover:border-bright bg-card-bright font-mono max-w-lg"
 >
   <h2 class="ml mt text-xl text-title-bright">{$_("articles.title")}</h2>
-  <div class="mx-2 mt-2 divide-y">
+  <div class="mt-2 divide-y">
     {#await eventsPromise then events}
       {#each Array.from(events) as event}
         <div class="text-muted-bright hover:text-highlight">
@@ -43,14 +43,14 @@
               <img
                 src={getTagValues(event.tags, "image")}
                 alt={getTagValues(event.tags, "title")}
-                class="rounded-md -mx-2 mt-4"
+                class="rounded-md mt-4 mr-48"
               />
             {/if}
-            <h3 class="font-semibold mt-2">
+            <h3 class="font-semibold mt-2 mx-1">
               {getTagValues(event.tags, "title")}
             </h3>
             <div
-              class="mt-1 text-sm font-thin text-muted-bright border-b border-dotted"
+              class="mt-1 mx-1 text-sm font-thin text-muted-bright border-b border-dotted"
             >
               {new Date(
                 Number(getTagValues(event.tags, "published_at")) * 1000
