@@ -39,6 +39,13 @@
       {#each Array.from(events) as event}
         <div class="text-muted-bright hover:text-highlight">
           <a href="{PUBLIC_NOSTR_LONG_FORM_CLIENT}/a/{event.encode()}">
+            {#if getTagValues(event.tags, "image")}
+              <img
+                src={getTagValues(event.tags, "image")}
+                alt={getTagValues(event.tags, "title")}
+                class="rounded-md -mx-2 mt-4"
+              />
+            {/if}
             <h3 class="font-semibold mt-2">
               {getTagValues(event.tags, "title")}
             </h3>
