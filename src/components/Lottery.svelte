@@ -25,7 +25,7 @@
   <a href={PUBLIC_LOTTERY}>
     <h2 class="ml mt text-xl text-title-bright">{$_("lottery.title")}</h2>
     <i
-      class="absolute top-3 right-3 hover:text-highlight fa-solid fa-up-right-from-square"
+      class="absolute top-3 right-3 text-muted-bright hover:text-highlight fa-solid fa-up-right-from-square"
     ></i>
     <div class="text-muted-bright my-2">
       {#if balance}
