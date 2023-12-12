@@ -54,6 +54,29 @@
       price: "200.000",
       currency: "sats",
     },
+    {
+      name: "Pantallas e-Ink (x 7)",
+      image:
+        "https://btcpay.bitcointxoko.com/Storage/1952523a-fe90-4aff-9091-1989cdd43fa1",
+      description:
+        "Pantallas tinta eletrónica para BTClock. Necesitas 7 por reloj. El precio es por 7 pantallas. ",
+      action:
+        "https://btcpay.bitcointxoko.com/apps/315345vxVqUWLASyga7ZLW3tdxUa/pos",
+      choiceKey: "e-ink-display",
+      price: "54,39",
+      currency: PUBLIC_PRICE_CURRENCY_SYMBOL,
+    },
+    {
+      name: "S3 mini",
+      image:
+        "https://btcpay.bitcointxoko.com/Storage/ec028167-3684-485e-9b6d-611067ef5bec",
+      description: "S3 mini para BTClock. ",
+      action:
+        "https://btcpay.bitcointxoko.com/apps/315345vxVqUWLASyga7ZLW3tdxUa/pos",
+      choiceKey: "s3-mini",
+      price: "6,72",
+      currency: PUBLIC_PRICE_CURRENCY_SYMBOL,
+    },
   ];
 </script>
 
@@ -71,9 +94,11 @@
   </div>
   <div class="divide-y">
     {#each products as product}
-      <div class="mx my-2 text-muted-bright border-gray-300">
+      <div
+        class="flex flex-col mx my-2 text-muted-bright border-gray-300 justify-center"
+      >
         <img src={product.image} alt={product.name} class="mt-4 rounded-md" />
-        <h3 class="mx my-2 font-semibold">{product.name}</h3>
+        <h3 class="mx my-2 font-semibold text-left">{product.name}</h3>
         <p class="mx-2 my-2">{product.description}</p>
         <div class="relative flex justify-center">
           <form method="POST" action={product.action}>
