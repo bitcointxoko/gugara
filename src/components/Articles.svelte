@@ -61,7 +61,7 @@
             >
               {new Date(
                 Number(getTagValues(event.tags, "published_at")) * 1000
-              ).toLocaleDateString()} /
+              ).toLocaleDateString()} //
               <span>
                 {readingTime(event.content)}
                 {$_("articles.minRead")}

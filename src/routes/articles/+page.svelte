@@ -5,6 +5,7 @@
     PUBLIC_NOSTR_LONG_FORM_CLIENT,
     PUBLIC_PUBKEY,
   } from "$env/static/public";
+  import Tags from "../../components/Tags.svelte";
 
   const user = ndk.getUser({ npub: PUBLIC_PUBKEY });
 
@@ -47,6 +48,9 @@
                 class="rounded-md mt mr-48"
               />
             {/if}
+            <div class="mt-2 text-xs">
+              <Tags tags={event.tags.filter((v) => v[0] === "t")} />
+            </div>
             <h3 class="font-semibold mt-2 mx-1">
               {getTagValues(event.tags, "title")}
             </h3>
@@ -55,7 +59,7 @@
             >
               {new Date(
                 Number(getTagValues(event.tags, "published_at")) * 1000
-              ).toLocaleDateString()} /
+              ).toLocaleDateString()} //
               <span>
                 {readingTime(event.content)}
                 {$_("articles.minRead")}
