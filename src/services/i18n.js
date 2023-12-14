@@ -106,7 +106,7 @@ function setupI18n({ withLocale: _locale } = { withLocale: "en" }) {
         description: "Mutiny alojado por ",
       },
       nodes: {
-        title: "Nodos ⚡️",
+        title: "Nodo ⚡️",
         channels: "Canales: ",
         capacity: "Capacidad: ",
       },
