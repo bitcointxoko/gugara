@@ -17,14 +17,12 @@
 <div
   class="p-2 sm:p-4 md:p-6 gap-4 rounded-lg border border-solid hover:border-bright bg-card-bright font-mono max-w-lg relative"
 >
-  <div>
+  <div class="text-title-bright hover:text-highlight">
     <a href="{PUBLIC_NOSTR_SHORT_NOTE_CLIENT}/{PUBLIC_PUBKEY}"
-      ><h2 class="ml mt text-xl text-title-bright hover:text-highlight">
+      ><h2 class="ml mt text-xl">
         {$_("notes")}
       </h2>
-      <i
-        class="absolute top-4 right-4 text-muted-bright hover:text-highlight fa-solid fa-up-right-from-square"
-      ></i>
+      <i class="absolute top-4 right-4 fa-solid fa-up-right-from-square"></i>
     </a>
   </div>
   <div class="text-muted-bright mt-2 divide-y">

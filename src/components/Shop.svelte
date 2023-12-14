@@ -54,45 +54,41 @@
       price: "200.000",
       currency: "sats",
     },
-    {
-      name: "Pantallas e-Ink (x 7)",
-      image:
-        "https://btcpay.bitcointxoko.com/Storage/1952523a-fe90-4aff-9091-1989cdd43fa1",
-      description:
-        "Pantallas tinta eletrónica para BTClock. Necesitas 7 por reloj. El precio es por 7 pantallas. ",
-      action:
-        "https://btcpay.bitcointxoko.com/apps/315345vxVqUWLASyga7ZLW3tdxUa/pos",
-      choiceKey: "e-ink-display",
-      price: "54,39",
-      currency: PUBLIC_PRICE_CURRENCY_SYMBOL,
-    },
-    {
-      name: "S3 mini",
-      image:
-        "https://btcpay.bitcointxoko.com/Storage/ec028167-3684-485e-9b6d-611067ef5bec",
-      description: "S3 mini para BTClock. ",
-      action:
-        "https://btcpay.bitcointxoko.com/apps/315345vxVqUWLASyga7ZLW3tdxUa/pos",
-      choiceKey: "s3-mini",
-      price: "6,72",
-      currency: PUBLIC_PRICE_CURRENCY_SYMBOL,
-    },
+    // {
+    //   name: "Pantallas e-Ink (x 7)",
+    //   image:
+    //     "https://btcpay.bitcointxoko.com/Storage/1952523a-fe90-4aff-9091-1989cdd43fa1",
+    //   description:
+    //     "Pantallas tinta eletrónica para BTClock. Necesitas 7 por reloj. El precio es por 7 pantallas. ",
+    //   action:
+    //     "https://btcpay.bitcointxoko.com/apps/315345vxVqUWLASyga7ZLW3tdxUa/pos",
+    //   choiceKey: "e-ink-display",
+    //   price: "54,39",
+    //   currency: PUBLIC_PRICE_CURRENCY_SYMBOL,
+    // },
+    // {
+    //   name: "S3 mini",
+    //   image:
+    //     "https://btcpay.bitcointxoko.com/Storage/ec028167-3684-485e-9b6d-611067ef5bec",
+    //   description: "S3 mini para BTClock. ",
+    //   action:
+    //     "https://btcpay.bitcointxoko.com/apps/315345vxVqUWLASyga7ZLW3tdxUa/pos",
+    //   choiceKey: "s3-mini",
+    //   price: "6,72",
+    //   currency: PUBLIC_PRICE_CURRENCY_SYMBOL,
+    // },
   ];
 </script>
 
 <div
   class="p-2 sm:p-4 md:p-6 gap-4 rounded-lg border border-solid hover:border-bright bg-card-bright font-mono max-w-lg flex-auto relative"
 >
-  <div>
+  <div class="text-title-bright hover:text-highlight">
     <a href="./shop">
-      <h2
-        class="ml mt text-xl text-bold hover:text-highlight text-title-bright"
-      >
+      <h2 class="ml mt text-xl">
         {$_("shop.title")}
       </h2>
-      <i
-        class="absolute top-4 right-4 text-muted-bright hover:text-highlight fa-solid fa-up-right-from-square"
-      ></i>
+      <i class="absolute top-4 right-4 fa-solid fa-up-right-from-square"></i>
     </a>
   </div>
   <div class="divide-y">

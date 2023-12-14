@@ -20,13 +20,11 @@
 </script>
 
 <div
-  class="relative mt-6 p-2 sm:p-4 md:p-6 h-30 gap-4 rounded-lg border border-solid hover:border-bright bg-card-bright font-mono max-h-28 max-w-lg"
+  class="relative mt-6 p-2 sm:p-4 md:p-6 h-30 gap-4 rounded-lg border border-solid hover:border-bright bg-card-bright font-mono max-h-28 max-w-lg text-title-bright hover:text-highlight"
 >
   <a href={PUBLIC_LOTTERY}>
-    <h2 class="ml mt text-xl text-title-bright">{$_("lottery.title")}</h2>
-    <i
-      class="absolute top-3 right-3 text-muted-bright hover:text-highlight fa-solid fa-up-right-from-square"
-    ></i>
+    <h2 class="ml mt text-xl">{$_("lottery.title")}</h2>
+    <i class="absolute top-3 right-3 fa-solid fa-up-right-from-square"></i>
     <div class="text-muted-bright my-2">
       {#if balance}
         <p class="ml-3">
