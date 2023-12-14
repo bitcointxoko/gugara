@@ -31,9 +31,18 @@
 </script>
 
 <div
-  class="basis-1/3 p-2 sm:p-4 md:p-6 gap-4 rounded-lg border border-solid hover:border-bright bg-card-bright font-mono max-w-lg"
+  class="basis-1/3 p-2 sm:p-4 md:p-6 gap-4 rounded-lg border border-solid hover:border-bright bg-card-bright font-mono max-w-lg relative"
 >
-  <h2 class="ml mt text-xl text-title-bright">{$_("articles.title")}</h2>
+  <a href="./articles">
+    <div>
+      <h2 class="ml mt text-xl text-title-bright hover:text-highlight">
+        {$_("articles.title")}
+      </h2>
+      <i
+        class="absolute top-4 right-4 text-muted-bright fa-solid fa-up-right-from-square hover:text-highlight"
+      ></i>
+    </div>
+  </a>
   <div class="mt-2 divide-y">
     {#await eventsPromise then events}
       {#each Array.from(events) as event}

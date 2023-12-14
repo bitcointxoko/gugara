@@ -1,9 +1,6 @@
 <script>
   import { _ } from "../../services/i18n";
-  import {
-    PUBLIC_PRICE_CURRENCY_SYMBOL,
-    PUBLIC_SHOP,
-  } from "$env/static/public";
+  import { PUBLIC_PRICE_CURRENCY_SYMBOL } from "$env/static/public";
 
   let products = [
     {
