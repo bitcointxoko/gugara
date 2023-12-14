@@ -81,7 +81,7 @@
 </script>
 
 <div
-  class="p-2 sm:p-4 md:p-6 gap-4 rounded-lg border border-solid hover:border-bright bg-card-bright font-mono max-w-lg flex-auto"
+  class="p-2 sm:p-4 md:p-6 gap-4 rounded-lg border border-solid hover:border-bright bg-card-bright font-mono max-w-lg flex-auto relative"
 >
   <div>
     <a href="./shop">
@@ -90,6 +90,9 @@
       >
         {$_("shop.title")}
       </h2>
+      <i
+        class="absolute top-4 right-4 text-muted-bright hover:text-highlight fa-solid fa-up-right-from-square"
+      ></i>
     </a>
   </div>
   <div class="divide-y">
