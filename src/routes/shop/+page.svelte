@@ -1,6 +1,5 @@
 <script>
   import { _ } from "../../services/i18n";
-  import Carousel from "svelte-carousel";
   import {
     PUBLIC_PRICE_CURRENCY_SYMBOL,
     PUBLIC_SHOP,
