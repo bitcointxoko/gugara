@@ -1,5 +1,6 @@
 <script>
-  import { _ } from "../services/i18n";
+  import { _ } from "../../services/i18n";
+  import Carousel from "svelte-carousel";
   import {
     PUBLIC_PRICE_CURRENCY_SYMBOL,
     PUBLIC_SHOP,
@@ -80,24 +81,15 @@
   ];
 </script>
 
-<div
-  class="p-2 sm:p-4 md:p-6 gap-4 rounded-lg border border-solid hover:border-bright bg-card-bright font-mono max-w-lg flex-auto"
->
-  <div>
-    <a href="./shop">
-      <h2
-        class="ml mt text-xl text-bold hover:text-highlight text-title-bright"
-      >
-        {$_("shop.title")}
-      </h2>
-    </a>
-  </div>
-  <div class="divide-y">
+<main class="flex flex-wrap flex-row items-start justify-center">
+  <section
+    class="mx-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6"
+  >
     {#each products as product}
       <div
-        class="flex flex-col mx my-2 text-muted-bright border-gray-300 justify-center"
+        class="p-2 sm:p-4 md:p-6 gap-4 rounded-lg border border-solid hover:border-bright bg-card-bright font-mono max-w-lg text-muted-bright"
       >
-        <img src={product.image} alt={product.name} class="mt-4 rounded-md" />
+        <img src={product.image} alt={product.name} class="mt rounded-md" />
         <h3 class="mx my-2 font-semibold text-left">{product.name}</h3>
         <p class="mx-2 my-2">{product.description}</p>
         <div class="relative flex justify-center">
@@ -114,5 +106,5 @@
         </div>
       </div>
     {/each}
-  </div>
-</div>
+  </section>
+</main>
