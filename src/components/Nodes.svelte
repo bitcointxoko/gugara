@@ -46,9 +46,15 @@
         </div>
       {:else}
         <h3
-          class="p-10 font-bold text-emerald-500 bg-amber-400 hover:bg-amber-600 hover:text-emerald-300 hover:drop-shadow-lg shadow rounded-l-lg align-bottom animate-pulse"
+          class="p-10 flex flex-col items-center bg-amber-400 hover:drop-shadow-lg shadow rounded-l-lg align-bottom animate-pulse"
         >
-          {$_("loading")}
+          <div class="h-2.5 bg-emerald-500 rounded-full w-24 mb-2.5"></div>
+          <div
+            class="mt-2 w-32 h-2 bg-emerald-500 rounded-full animate-pulse"
+          ></div>
+          <div
+            class="mt-2 w-32 h-2 bg-emerald-500 rounded-full animate-pulse"
+          ></div>
         </h3>
       {/if}
     </a>

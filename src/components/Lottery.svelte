@@ -35,7 +35,7 @@
           {$_("sats")}
         </p>
       {:else}
-        <p class="animate-pulse">{$_("loading")}</p>
+        <div class="mt-2 w-32 h-2 bg-gray-300 rounded-full animate-pulse"></div>
       {/if}
     </div>
   </a>

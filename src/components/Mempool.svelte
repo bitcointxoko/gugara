@@ -16,8 +16,12 @@
       {blockHeight}
     </h1>
   {:else}
-    <h1 class="tech text-3xl font-mono text-highlight animate-pulse">
-      {$_("loading")}
-    </h1>
+    <div class="relative animate-pulse pb-2.5">
+      <div>
+        <div
+          class="h-2.5 bg-button-bright rounded-full w-24 absolute right-0"
+        ></div>
+      </div>
+    </div>
   {/if}
 </div>

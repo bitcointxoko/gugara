@@ -28,6 +28,6 @@
   </div>
 {:else}
   <h1 class="tech text-sm font-mono text-highlight animate-pulse">
-    {$_("loading")}
+    <div class="mt-2 w-32 h-2 bg-button-bright rounded-full"></div>
   </h1>
 {/if}

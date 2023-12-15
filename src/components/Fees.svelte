@@ -20,7 +20,7 @@
     </div>
   {:else}
     <h3 class="tech text-m font-mono text-highlight animate-pulse">
-      {$_("loading")}
+      <div class="mt-2 w-32 h-2 bg-button-bright rounded-full"></div>
     </h3>
   {/if}
 </div>

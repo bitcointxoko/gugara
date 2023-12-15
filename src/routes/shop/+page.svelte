@@ -42,6 +42,8 @@
       name: "Tarjeta NFC",
       images: [
         "https://btcpay.bitcointxoko.com/LocalStorage/0b8333f0-1267-421a-97cd-69a44490b34a-nfc-card-ntag424-dna.jpg",
+        "https://btcpay.bitcointxoko.com/Storage/eec02d9f-ca54-4ab0-a6aa-5a5b266faaaa",
+        "https://btcpay.bitcointxoko.com/Storage/df113b6f-fbc1-4780-a027-29f04b4853b8",
       ],
       description:
         "Un chip NXP NTAG424 DNA dentro de una tarjeta NFC PVC blanca. ",
@@ -54,7 +56,7 @@
     {
       name: "Kit BTClock",
       images: [
-        "https://btcpay.bitcointxoko.com/Storage/8b6d0541-bd0b-4713-b674-bff4fc40c37a",
+        "https://btclock.store/wp-content/uploads/2023/11/IMG_2174.jpeg",
         "https://btclock.store/wp-content/uploads/2023/11/webinterface.png",
         "https://btclock.store/wp-content/uploads/2023/08/PresolderAll.jpeg",
         "https://btclock.store/wp-content/uploads/2023/08/AcrylSet.jpeg",
@@ -87,7 +89,10 @@
     {
       name: "S3 mini",
       images: [
-        "https://btcpay.bitcointxoko.com/Storage/ec028167-3684-485e-9b6d-611067ef5bec",
+        "https://btcpay.bitcointxoko.com/Storage/2f1ecaa1-a7c5-49dc-a646-c0d35a1ba2ce",
+        "https://btcpay.bitcointxoko.com/Storage/e8fefa8b-25a4-40f5-ba70-9a0d1fa97b06",
+        "https://btcpay.bitcointxoko.com/Storage/de717276-1122-4e15-9e52-a00e0e0c8705",
+        "https://btcpay.bitcointxoko.com/Storage/f96cb841-5b6f-452d-8b0c-569be1dfb189",
       ],
       description: "S3 mini para BTClock. ",
       action:

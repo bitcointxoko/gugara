@@ -1,5 +1,4 @@
 <script>
-  import { PUBLIC_LOGO } from "$env/static/public";
   import Fees from "./Fees.svelte";
   import Mempool from "./Mempool.svelte";
   import Price from "./Price.svelte";
@@ -11,7 +10,7 @@
 >
   <div class="flex items-center pl-4 font-mono text-lg font-bold text-gray-200">
     <a href=".">
-      <img src={PUBLIC_LOGO} class="h-12 mr-3" alt="logo" />
+      <img src="logo.png" class="h-12 mr-3" alt="logo" />
     </a>
     <div class="sm:flex items-center gap-4 hidden">
       <Time />
