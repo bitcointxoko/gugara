@@ -22,7 +22,7 @@
       <About />
       <Meetups />
       <Mint />
-      <Lottery />
+      <!-- <Lottery /> -->
       <Nostrscript />
       <NewWallet />
       <GroupChat />
