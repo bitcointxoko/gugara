@@ -4,14 +4,15 @@
 
   let meetups = [
     {
-      date: "17.12.2023",
+      title: "Meetup enero",
+      date: "28.01.2024",
       start: "15:00",
       end: "19:00",
       location: "Izarra Centre, Ermua",
       locationNaddr:
         "naddr1qqx5j7npwfexzgzrv4h8gun9qy88wumn8ghj7mn0wvhxcmmv9uq3zamnwvaz7tmwdaehgu3wwa5kuef0qyfhwumn8ghj7ur4wfcxcetsv9njuetn9upzqkvlvlma7a55ccp6d5rrdc27h3ssmdmael286mjaq5uxmqslk04fqvzqqqyj3vxwxkju",
       rsvpEvent:
-        "b2864f90174986cb4f9eb1998905756f3d2ac43e33fc8e033285b611bbeb73ce",
+        "6ad219137b3c4fd1a7ce523705f280834384bdd65f9d46b5b0aa3c17bce9c824",
     },
   ];
 </script>
@@ -26,15 +27,16 @@
         class="relative mx-2 py-4 border-gray-300 text-muted-bright mt-2 flex flex-row"
       >
         <div>
+          <!-- <p class="text-title-bright">{meetup.title}</p> -->
           <p>🗓️ {meetup.date} {meetup.start}-{meetup.end}</p>
-          <a href="{PUBLIC_YONDAR}{meetup.locationNaddr}"
-            ><p>
+          <a href="{PUBLIC_YONDAR}{meetup.locationNaddr}">
+            <p>
               📍 <span
                 class="hover:text-highlight hover:underline hover:decoration-dashed"
                 >{meetup.location}</span
               >
-            </p></a
-          >
+            </p>
+          </a>
         </div>
         <a
           href="{PUBLIC_RSVPLEASE}{meetup.rsvpEvent}"

@@ -4,7 +4,7 @@
 </script>
 
 <section class="flex pt-4 mb-2 mx-6 gap-4 justify-center">
-  <div
+  <!-- <div
     class="p-2 sm:p-4 md:p-6 rounded-lg border border-solid hover:border-bright bg-button-dark text-white text-xl font-mono max-w-sm"
   >
     <form
@@ -32,7 +32,7 @@
         />
       </button>
     </form>
-  </div>
+  </div> -->
   <div
     class="flex p-2 sm:p-4 md:p-6 rounded-lg border border-solid hover:border-bright bg-slate-800 text-white text-xl text-center font-mono max-w-sm"
   >
