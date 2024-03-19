@@ -1,0 +1,121 @@
+[
+	{
+		"name": "Calcetines",
+		"images": [
+			{
+				"alt": "socks",
+				"src": "https://cdn.satellite.earth/6f5f418ac2dc5b67b00d2c19a829bfd77d5eda23240d87f9b35d4489e7cdec85.webp",
+				"title": "socks"
+			},
+			{
+				"alt": "socks",
+				"src": "https://cdn.satellite.earth/5ff548bdbf323bd56846775a5f86c9892197e867b3e4f545602d55217bcb293f.webp",
+				"title": "socks"
+			},
+			{
+				"alt": "socks",
+				"src": "https://cdn.satellite.earth/e8424ad97d9c2e852b5438fdc5dac6d38a0091d672da173fc96f1c75870ceabd.webp",
+				"title": "socks"
+			},
+			{
+				"alt": "socks",
+				"src": "https://cdn.satellite.earth/f1b028dfc2365f81a8fa3c3d3169bc3b532a61b759949279f66776363b3fcc66.webp",
+				"title": "socks"
+			}
+		],
+		"description": "¡Ponte a la moda Bitcoin con nuestros calcetines de Bitcoin! 🧦 ¡Da pasos seguros con estilo mientras muestras tu amor por Bitcoin! 🚀",
+		"action": "https://btcpay.bitcointxoko.com/apps/4RxS3NvGuRU2S55A9srXq3XENyoT/pos",
+		"choiceKey": "socks",
+		"price": "10,00",
+		"currency": "€"
+	},
+	{
+		"name": "Calcetines x 3",
+		"images": [
+			{
+				"alt": "socks",
+				"src": "https://cdn.satellite.earth/3199d0c2c665f7eec0e2df89eb9d5cae7da5e09de566c95449b82dcd7081bc16.webp",
+				"title": "socks"
+			}
+		],
+		"description": "Presentamos nuestros nuevos calcetines Bitcoin, la forma más cómoda de caminar hacia el futuro financiero. 🧦 ¡Lleva consigo el espíritu de Satoshi en cada paso! 🚀 ",
+		"action": "https://btcpay.bitcointxoko.com/apps/4RxS3NvGuRU2S55A9srXq3XENyoT/pos",
+		"choiceKey": "calcetines x 3",
+		"price": "25,00",
+		"currency": "€"
+	},
+	{
+		"name": "Tarjeta NFC",
+		"images": [
+			{
+				"src": "https://cdn.satellite.earth/dfd81cae741eab83bd37901ce671b989f79ffb3b521879b011e410c7fdf5cc71.webp"
+			},
+			{
+				"src": "https://btcpay.bitcointxoko.com/Storage/eec02d9f-ca54-4ab0-a6aa-5a5b266faaaa"
+			},
+			{
+				"src": "https://btcpay.bitcointxoko.com/Storage/df113b6f-fbc1-4780-a027-29f04b4853b8"
+			}
+		],
+		"description": "Un chip NXP NTAG424 DNA dentro de una tarjeta NFC PVC blanca. ",
+		"action": "https://btcpay.bitcointxoko.com/apps/psvYP8PQeG3toagw8eUgG95Kwda/pos",
+		"choiceKey": "tarjeta nfc - ntag424 dna (pvc blanca)",
+		"price": "5.000",
+		"currency": "sats"
+	},
+	{
+		"name": "Kit BTClock",
+		"images": [
+			{
+				"src": "https://cdn.satellite.earth/867cdca4a1131c6dc155c0b1de55a17cca06ca116b6e92c7ed69f90a016e0ceb.webp"
+			},
+			{ "src": "https://btclock.store/wp-content/uploads/2023/11/webinterface.png" },
+			{ "src": "https://btclock.store/wp-content/uploads/2023/08/PresolderAll.jpeg" },
+			{ "src": "https://btclock.store/wp-content/uploads/2023/08/AcrylSet.jpeg" },
+			{ "src": "https://btclock.store/wp-content/uploads/2023/08/FrontPCB.jpeg" },
+			{ "src": "https://btclock.store/wp-content/uploads/2023/08/PresolderSMD.jpeg" },
+			{ "src": "https://btclock.store/wp-content/uploads/2023/10/img_1805-scaled.jpeg" },
+			{ "src": "https://btclock.store/wp-content/uploads/2023/10/img_1804-scaled.jpeg" }
+		],
+		"description": "Incluye PCB principal (componentes SMB soldados), PCB frontal, parte frontal y trasera acrílicas, cable USB-C, juego de tornillos, componentes necesarios. No incluye pantallas de tinta electrónica ni S3 mini. ",
+		"action": "https://btcpay.bitcointxoko.com/apps/psvYP8PQeG3toagw8eUgG95Kwda/pos",
+		"choiceKey": "kit btclock",
+		"price": "150.000",
+		"currency": "sats"
+	},
+	{
+		"name": "Pantallas e-Ink (x 7)",
+		"images": [
+			{
+				"src": "https://cdn.satellite.earth/56ac63dc0c5f063aa32aa522c421fd39d5689aefcb45dbf15830043df77fe3b8.webp"
+			}
+		],
+		"description": "Pantallas tinta eletrónica para BTClock. Necesitas 7 por reloj. El precio es por 7 pantallas. ",
+		"action": "https://btcpay.bitcointxoko.com/apps/315345vxVqUWLASyga7ZLW3tdxUa/pos",
+		"choiceKey": "e-ink-display",
+		"price": "54,39",
+		"currency": "€"
+	},
+	{
+		"name": "S3 mini",
+		"images": [
+			{
+				"src": "https://cdn.satellite.earth/7e1044ed081a00c8aa87dcc74e1e2a9ef225ad8bf9a085c5a0b24000bc7031df.webp"
+			},
+			{
+				"src": "https://btcpay.bitcointxoko.com/Storage/e8fefa8b-25a4-40f5-ba70-9a0d1fa97b06"
+			},
+			{
+				"src": "https://btcpay.bitcointxoko.com/Storage/de717276-1122-4e15-9e52-a00e0e0c8705"
+			},
+			{
+				"src": "https://btcpay.bitcointxoko.com/Storage/f96cb841-5b6f-452d-8b0c-569be1dfb189"
+			}
+		],
+		"description": "S3 mini para BTClock. ",
+		"action": "https://btcpay.bitcointxoko.com/apps/315345vxVqUWLASyga7ZLW3tdxUa/pos",
+		"choiceKey": "s3-mini",
+		"price": "6,72",
+		"currency": "€"
+	}
+]
