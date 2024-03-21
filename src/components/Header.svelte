@@ -23,6 +23,12 @@
 		<NavBrand href="/" class="mx-auto">
 			<img src="/logo.webp" class="me-3 h-10 sm:h-12" alt="Bitcoin Txoko Logo" />
 		</NavBrand>
+		<DarkMode />
+	</NavContainer>
+</Navbar>
+
+<Drawer transitionType="fly" {transitionParams} bind:hidden={hidden1} id="sidebar1">
+	<div class="flex">
 		<Button color="none" class="dark:text-white">{$_('locale.short')}</Button>
 		<Dropdown>
 			<DropdownItem on:click={() => setLocale('en')}>🇬🇧</DropdownItem>
@@ -31,13 +37,6 @@
 				<img src="/eus.svg" alt="basque flag" />
 			</DropdownItem>
 		</Dropdown>
-	</NavContainer>
-</Navbar>
-
-<Drawer transitionType="fly" {transitionParams} bind:hidden={hidden1} id="sidebar1">
-	<div class="flex">
-		<DarkMode />
-
 		<CloseButton on:click={() => (hidden1 = true)} class="mb-4 dark:text-white" />
 	</div>
 	<Sidebar />
