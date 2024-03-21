@@ -1,7 +1,8 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import { _ } from '../../../services/i18n';
 	import ndk from '$lib/stores/ndk';
-	import { Button, Card } from 'flowbite-svelte';
+	import { Button, Card, CardPlaceholder } from 'flowbite-svelte';
 	import { getTagValues } from '$lib/util';
 	import { PUBLIC_NOSTR_CALENDAR_CLIENT } from '$env/static/public';
 	import { ArrowRightOutline } from 'flowbite-svelte-icons';
@@ -11,17 +12,19 @@
 	const eventPromise = ndk.fetchEvent(data.event);
 </script>
 
-<div class="mx-4 flex flex-col items-center gap-4 pt-6">
-	{#await eventPromise then event}
+<main class="mx-4 my-4 flex flex-col items-center gap-4">
+	{#await eventPromise}
+		<CardPlaceholder size="xxl" />
+	{:then event}
 		<Card img={getTagValues(event.tags, 'image')}>
 			<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 				{getTagValues(event.tags, 'name')}
 			</h5>
 			<div class="flex flex-row items-start">
-				<div class="mr-auto">
-					<div class="text-muted-bright mx-1 mt-1 border-b border-dotted text-sm font-light">
+				<div class="mr-auto divide-y divide-dashed">
+					<div class="text-muted-bright mx-1 text-sm font-light">
 						🗓️ {new Date(Number(getTagValues(event.tags, 'start')) * 1000).toLocaleDateString(
-							'es-ES',
+							$_('locale.long'),
 							{
 								weekday: 'short',
 								day: 'numeric',
@@ -29,7 +32,9 @@
 								year: '2-digit'
 							}
 						)}
-						{new Date(Number(getTagValues(event.tags, 'start')) * 1000).toLocaleTimeString([], {
+					</div>
+					<div class="text-muted-bright mx-1 text-sm font-light">
+						🕓 {new Date(Number(getTagValues(event.tags, 'start')) * 1000).toLocaleTimeString([], {
 							hour: '2-digit',
 							minute: '2-digit'
 						})}-{new Date(Number(getTagValues(event.tags, 'end')) * 1000).toLocaleTimeString([], {
@@ -37,7 +42,7 @@
 							minute: '2-digit'
 						})}
 					</div>
-					<div class="text-muted-bright mx-1 mb-3 mt-1 border-b border-dotted text-sm font-light">
+					<div class="text-muted-bright mx-1 mb-3 text-sm font-light">
 						{#if getTagValues(event.tags, 'location')}
 							📍 {getTagValues(event.tags, 'location')}
 						{:else}
@@ -47,7 +52,8 @@
 				</div>
 				<div class="mr-2">
 					<Button href="{PUBLIC_NOSTR_CALENDAR_CLIENT}{event.encode()}">
-						RSVP <ArrowRightOutline class="ms-2 h-3.5 w-3.5 text-white" />
+						{$_('meetup.rsvp')}
+						<ArrowRightOutline class="ms-2 h-3.5 w-3.5 text-white" />
 					</Button>
 				</div>
 			</div>
@@ -56,4 +62,4 @@
 			</p>
 		</Card>
 	{/await}
-</div>
+</main>

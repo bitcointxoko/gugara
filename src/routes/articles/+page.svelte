@@ -3,7 +3,7 @@
 	import ndk, { user } from '$lib/stores/ndk';
 	import { PUBLIC_NOSTR_LONG_FORM_CLIENT } from '$env/static/public';
 	import Tags from '../../components/Tags.svelte';
-	import { Card, Button } from 'flowbite-svelte';
+	import { Card, Button, CardPlaceholder } from 'flowbite-svelte';
 	import { ArrowRightOutline } from 'flowbite-svelte-icons';
 	import { readingTime, getTagValues } from '$lib/util';
 
@@ -13,9 +13,16 @@
 	});
 </script>
 
-<main class="my-4 flex flex-row flex-wrap items-start justify-center">
-	<section class="mx-4 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-		{#await eventsPromise then events}
+<main class="mx-4 my-4 flex flex-row flex-wrap items-start justify-center">
+	<section class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+		{#await eventsPromise}
+			<CardPlaceholder size="lg" />
+			<CardPlaceholder size="lg" />
+			<CardPlaceholder size="lg" />
+			<CardPlaceholder size="lg" />
+			<CardPlaceholder size="lg" />
+			<CardPlaceholder size="lg" />
+		{:then events}
 			{#each Array.from(events) as event}
 				<Card img={getTagValues(event.tags, 'image')}>
 					<h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">

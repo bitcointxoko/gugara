@@ -33,18 +33,22 @@
 			{$_('mint.title')}
 		</h5>
 		<QuestionCircleOutline id="tooltip" />
-		<Tooltip class="w-48 text-balance" triggeredBy="[id='tooltip']"
-			>Un mint es como un banco para ecash, que ofrece transacciones instantáneas y privadas por
-			cero comisiones.
-		</Tooltip>
+		<Tooltip class="w-48 text-balance" triggeredBy="[id='tooltip']">{$_('mint.tooltip')}</Tooltip>
 	</div>
 
 	{#if balance}
 		<div class="flex items-center">
-			<p class="mr-auto font-normal text-gray-700 dark:text-gray-400">
+			<div class="mr-auto flex pr-2 align-bottom font-normal text-gray-700 dark:text-gray-400">
 				{$_('mint.balance')}<span>{balance}</span>
-				{$_('sats')}
-			</p>
+				<svg
+					data-v-52a72b4a=""
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+					class="h-5"><path d="M7 7.91h10M12 5.455V3M12 21v-2.455M7 12h10M7 16.09h10"></path></svg
+				>
+			</div>
 			<Button href={PUBLIC_NUTSTASH}>
 				{$_('mint.nutstash')}
 				<ArrowRightOutline class="ms-2 h-3.5 w-3.5 text-white" />
@@ -54,7 +58,7 @@
 		<div class="mt-2 h-2 w-32 animate-pulse rounded-full bg-gray-300"></div>
 	{/if}
 	<a href={PUBLIC_MINT} class="mt-3 inline-flex items-center text-primary-600 hover:underline">
-		mint
+		{$_('mint.title').toLowerCase()}
 		<ArrowUpRightFromSquareOutline class="ms-2.5 h-3 w-3" />
 	</a>
 </Card>

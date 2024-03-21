@@ -9,7 +9,7 @@
 	});
 </script>
 
-<main class="mx-4 mx-auto my-6 items-center">
+<main class=" mx-4 my-4 flex flex-row flex-wrap items-start justify-center">
 	{#await eventsPromise then events}
 		{#each Array.from(events).slice(0, 1) as event}
 			<LinkList tags={event.tags.filter((v) => v[0] === 'r')} />

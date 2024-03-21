@@ -7,7 +7,7 @@
 
 <Card size="lg">
 	<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-		{$_('greeting.welcome')}
+		Ongi etorri! 🤙
 	</h5>
 	<p class="font-normal leading-tight text-gray-700 dark:text-gray-400">
 		<a id="popover" href="/profile"

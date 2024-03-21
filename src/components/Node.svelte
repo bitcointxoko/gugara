@@ -25,17 +25,22 @@
 				{node.alias}
 			</h5>
 			<QuestionCircleOutline id="node" />
-			<Tooltip class="w-48 text-balance" triggeredBy="[id='node']"
-				>Este es nuestro nodo en la red Lightning
-			</Tooltip>
+			<Tooltip class="w-48 text-balance" triggeredBy="[id='node']">{$_('nodes.tooltip')}</Tooltip>
 		</div>
 		<p class="font-normal leading-tight text-gray-700 dark:text-gray-400">
 			{$_('nodes.channels')}{node.active_channel_count}
 		</p>
-		<p class="font-normal leading-tight text-gray-700 dark:text-gray-400">
+		<div class="flex font-normal leading-tight text-gray-700 dark:text-gray-400">
 			{$_('nodes.capacity')}{node.capacity / 1000000}M
-			{$_('sats')}
-		</p>
+			<svg
+				data-v-52a72b4a=""
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke="currentColor"
+				class="h-5"><path d="M7 7.91h10M12 5.455V3M12 21v-2.455M7 12h10M7 16.09h10"></path></svg
+			>
+		</div>
 		<a
 			href="{PUBLIC_LIGHTNING_EXPLORER}{PUBLIC_NODE_PUBKEY}"
 			class="mt-3 inline-flex items-center text-primary-600 hover:underline"

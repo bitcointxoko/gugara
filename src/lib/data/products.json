@@ -48,13 +48,16 @@
 		"name": "Tarjeta NFC",
 		"images": [
 			{
+				"alt": "tarjeta nfc",
 				"src": "https://cdn.satellite.earth/dfd81cae741eab83bd37901ce671b989f79ffb3b521879b011e410c7fdf5cc71.webp"
 			},
 			{
-				"src": "https://btcpay.bitcointxoko.com/Storage/eec02d9f-ca54-4ab0-a6aa-5a5b266faaaa"
+				"alt": "tarjeta nfc stack 1",
+				"src": "https://cdn.satellite.earth/eb75ea5596421f4293b62fc5d85cef77d02c51e0512fb4b1b364d0c75d6566b4.webp"
 			},
 			{
-				"src": "https://btcpay.bitcointxoko.com/Storage/df113b6f-fbc1-4780-a027-29f04b4853b8"
+				"alt": "tarjeta nfc stack 2",
+				"src": "https://cdn.satellite.earth/c60be843962630ab36621dd6eb28ddf55b6725889c0656dcebcb959f1300081b.webp"
 			}
 		],
 		"description": "Un chip NXP NTAG424 DNA dentro de una tarjeta NFC PVC blanca. ",
@@ -67,15 +70,37 @@
 		"name": "Kit BTClock",
 		"images": [
 			{
+				"alt": "btclock",
 				"src": "https://cdn.satellite.earth/867cdca4a1131c6dc155c0b1de55a17cca06ca116b6e92c7ed69f90a016e0ceb.webp"
 			},
-			{ "src": "https://btclock.store/wp-content/uploads/2023/11/webinterface.png" },
-			{ "src": "https://btclock.store/wp-content/uploads/2023/08/PresolderAll.jpeg" },
-			{ "src": "https://btclock.store/wp-content/uploads/2023/08/AcrylSet.jpeg" },
-			{ "src": "https://btclock.store/wp-content/uploads/2023/08/FrontPCB.jpeg" },
-			{ "src": "https://btclock.store/wp-content/uploads/2023/08/PresolderSMD.jpeg" },
-			{ "src": "https://btclock.store/wp-content/uploads/2023/10/img_1805-scaled.jpeg" },
-			{ "src": "https://btclock.store/wp-content/uploads/2023/10/img_1804-scaled.jpeg" }
+			{
+				"alt": "btclock web interface",
+				"src": "https://cdn.satellite.earth/3e283d57da619aa744fb73225559a4cf813b57fbcf6be020ec26b411efb3a62a.webp"
+			},
+			{
+				"alt": "btclock presolder all",
+				"src": "https://cdn.satellite.earth/4cc16f867de89fdc9357c482f6c05c59490c668c904109fa9d181eeecea83f37.webp"
+			},
+			{
+				"alt": "btclock acrylic",
+				"src": "https://cdn.satellite.earth/9ee8664ba89cc6ff2159155b63e80a4e2164d528239576699ca2962bc3453e4b.webp"
+			},
+			{
+				"alt": "btclock front pcb",
+				"src": "https://cdn.satellite.earth/86172a5ee5c4199bff14c43111446e115a6eb4e6d0dd80888861c831b267c391.webp"
+			},
+			{
+				"alt": "btclock presolder smd",
+				"src": "https://cdn.satellite.earth/cbde1c333becb7fac8f30573d18d2de0a9a621cd80c52fa24773c11ab82b4c43.webp"
+			},
+			{
+				"alt": "btclock usb-c cable",
+				"src": "https://cdn.satellite.earth/a3e265fe7794fc50cbf9dfe27775c177160d28189aeec5fc432e598acdee6a3f.webp"
+			},
+			{
+				"alt": "btclock usb-a cable",
+				"src": "https://cdn.satellite.earth/03e9fc1f0a683c3c9af0e7574f03cc77e6cdd330127c988eb27fbe265e75e9a5.webp"
+			}
 		],
 		"description": "Incluye PCB principal (componentes SMB soldados), PCB frontal, parte frontal y trasera acrílicas, cable USB-C, juego de tornillos, componentes necesarios. No incluye pantallas de tinta electrónica ni S3 mini. ",
 		"action": "https://btcpay.bitcointxoko.com/apps/psvYP8PQeG3toagw8eUgG95Kwda/pos",
@@ -87,6 +112,7 @@
 		"name": "Pantallas e-Ink (x 7)",
 		"images": [
 			{
+				"alt": "pantalla e-ink",
 				"src": "https://cdn.satellite.earth/56ac63dc0c5f063aa32aa522c421fd39d5689aefcb45dbf15830043df77fe3b8.webp"
 			}
 		],
@@ -100,16 +126,20 @@
 		"name": "S3 mini",
 		"images": [
 			{
+				"alt": "s3 mini",
 				"src": "https://cdn.satellite.earth/7e1044ed081a00c8aa87dcc74e1e2a9ef225ad8bf9a085c5a0b24000bc7031df.webp"
 			},
 			{
-				"src": "https://btcpay.bitcointxoko.com/Storage/e8fefa8b-25a4-40f5-ba70-9a0d1fa97b06"
+				"alt": "s3 mini back",
+				"src": "https://cdn.satellite.earth/9315f705bf754bab8d3da1100fe2d7a9e876071f0ed8d9019e2df7e0d68b670c.webp"
 			},
 			{
-				"src": "https://btcpay.bitcointxoko.com/Storage/de717276-1122-4e15-9e52-a00e0e0c8705"
+				"alt": "s3 mini",
+				"src": "https://cdn.satellite.earth/99d35055e2bdf7fac92a0ada2e9079c8555748537642ec6ee9b38ee322e359bc.webp"
 			},
 			{
-				"src": "https://btcpay.bitcointxoko.com/Storage/f96cb841-5b6f-452d-8b0c-569be1dfb189"
+				"alt": "s3 mini pinout",
+				"src": "https://cdn.satellite.earth/737f6af3d28018acc9089f6b7d4f639b04b4385d19940b5f5093a347a04b66e9.webp"
 			}
 		],
 		"description": "S3 mini para BTClock. ",

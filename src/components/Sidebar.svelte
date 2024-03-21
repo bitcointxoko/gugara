@@ -1,14 +1,22 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { _ } from '../services/i18n';
-	import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarCta } from 'flowbite-svelte';
+	import {
+		Sidebar,
+		SidebarGroup,
+		SidebarItem,
+		SidebarWrapper,
+		SidebarCta,
+		Tooltip
+	} from 'flowbite-svelte';
 	import {
 		GridSolid,
 		HomeSolid,
 		ShoppingBagSolid,
 		CalendarMonthSolid,
 		FilePenSolid,
-		ProfileCardSolid
+		ProfileCardSolid,
+		QuestionCircleOutline
 	} from 'flowbite-svelte-icons';
 	import ndk from '$lib/stores/ndk';
 	import { RelayList } from '@nostr-dev-kit/ndk-svelte-components';
@@ -21,7 +29,7 @@
 <Sidebar {activeUrl}>
 	<SidebarWrapper>
 		<SidebarGroup>
-			<SidebarItem label="Inicio" href="/">
+			<SidebarItem label={$_('home')} href="/">
 				<svelte:fragment slot="icon">
 					<HomeSolid
 						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -56,7 +64,7 @@
 					/>
 				</svelte:fragment>
 			</SidebarItem>
-			<SidebarItem label="Perfil" href="/profile" {spanClass}>
+			<SidebarItem label={$_('profile.title')} href="/profile" {spanClass}>
 				<svelte:fragment slot="icon">
 					<ProfileCardSolid
 						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -65,10 +73,16 @@
 			</SidebarItem>
 		</SidebarGroup>
 		<SidebarCta
-			label="Relays"
+			label={$_('relays.title')}
 			divWrapperClass="p-4 mt-6 bg-gray-50 rounded-lg dark:bg-gray-900 text-gray-900 dark:text-gray-50"
 			spanClass="bg-emerald-100 text-emerald-800 text-sm font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-emerald-200 dark:text-emerald-900"
 		>
+			<svelte:fragment slot="icon">
+				<QuestionCircleOutline id="tooltip" />
+				<Tooltip class="w-48 text-balance" triggeredBy="[id='tooltip']">
+					{$_('relays.tooltip')}
+				</Tooltip>
+			</svelte:fragment>
 			<RelayList {ndk} />
 		</SidebarCta>
 	</SidebarWrapper>

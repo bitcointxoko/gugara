@@ -1,47 +1,18 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-
 	import { _ } from '../../../services/i18n';
 	import products from '$lib/data/products.json';
-	import { Button, Card, Carousel } from 'flowbite-svelte';
+	import { Button, Gallery } from 'flowbite-svelte';
 
 	export let data: PageData;
 
 	const product = products.find((product) => product.choiceKey === data.product);
-
-	export const images = [
-		{
-			alt: 'socks1',
-			src: 'https://cdn.satellite.earth/6f5f418ac2dc5b67b00d2c19a829bfd77d5eda23240d87f9b35d4489e7cdec85.webp',
-			title: 'socks1'
-		},
-		{
-			alt: 'socks2',
-			src: 'https://cdn.satellite.earth/5ff548bdbf323bd56846775a5f86c9892197e867b3e4f545602d55217bcb293f.webp',
-			title: 'socks2'
-		},
-		{
-			alt: 'socks3',
-			src: 'https://cdn.satellite.earth/e8424ad97d9c2e852b5438fdc5dac6d38a0091d672da173fc96f1c75870ceabd.webp',
-			title: 'socks3'
-		},
-		{
-			alt: 'socks4',
-			src: 'https://cdn.satellite.earth/f1b028dfc2365f81a8fa3c3d3169bc3b532a61b759949279f66776363b3fcc66.webp',
-			title: 'socks4'
-		}
-	];
 </script>
 
 <main class="my-4 flex flex-row flex-wrap items-start justify-center">
 	{#if product}
-		<!-- <div class="max-w-4xl">
-			<Carousel images={product.images} let:Controls>
-				<Controls />
-			</Carousel>
-		</div> -->
-		<Card img={product.images[0].src} padding="none">
-			<div class="mt-2 px-5 pb-5">
+		<div class="max-w-4xl">
+			<div class="mt-4 px-5 pb-5">
 				<h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
 					{product.name}
 				</h5>
@@ -50,8 +21,25 @@
 				</p>
 				<div class="flex items-center justify-between">
 					<span class="text-3xl font-bold text-gray-900 dark:text-white">
-						{product.price}
-						{product.currency}
+						{#if product.currency === 'sats'}
+							<div class="flex">
+								{product.price}
+								<svg
+									data-v-52a72b4a=""
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 24 24"
+									fill="currentColor"
+									class="h-8"
+									><path
+										fill-rule="evenodd"
+										d="M12.75 18.5V21h-1.5v-2.5h1.5zM17 16.75H7v-1.5h10v1.5zM17 12.75H7v-1.5h10v1.5zM17 8.75H7v-1.5h10v1.5zM12.75 3v2.5h-1.5V3h1.5z"
+										clip-rule="evenodd"
+									></path></svg
+								>
+							</div>
+						{:else}
+							{product.price}{product.currency}
+						{/if}
 					</span>
 					<form method="POST" action={product.action}>
 						<Button>
@@ -62,6 +50,7 @@
 					</form>
 				</div>
 			</div>
-		</Card>
+			<Gallery items={product.images} class="grid-cols-1 gap-2 px-4 md:grid-cols-2" />
+		</div>
 	{/if}
 </main>

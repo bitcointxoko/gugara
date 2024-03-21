@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Button, Card, Modal, Tabs, TabItem } from 'flowbite-svelte';
+	import { Button, Card, Dropdown, DropdownItem, Modal, Tabs, TabItem } from 'flowbite-svelte';
+	import { ChevronDownSolid, WalletSolid } from 'flowbite-svelte-icons';
 	import { _ } from '../services/i18n';
 	let defaultModal = false;
 </script>
@@ -33,7 +34,20 @@
 						<a href="https://phoenix.acinq.co/" class="underline decoration-dotted">Phoenix</a>.
 					</p>
 					<div class="my-4 pt-4">
-						<Button href="https://bitcointxoko.com">Nueva billetera</Button>
+						<Button class="mr-2" color="alternative"
+							>Guías<ChevronDownSolid class="text-alternative ms-2 h-3 w-3" /></Button
+						>
+						<Dropdown>
+							<DropdownItem
+								href="https://habla.news/es/a/naddr1qqxnzd3exuerqdp3xv6ngd3kqy28wumn8ghj7un9d3shjtnyv9kh2uewd9hsygzenanl0hmkjnrq8fksvdhpt67xzrdh0h8agltwt5znsmvzr7e74ypsgqqqw4rszszq8e"
+								>Dirección Lightning</DropdownItem
+							>
+							<DropdownItem
+								href="https://habla.news/es/a/naddr1qqxnzd3exuerqdfkxccnyv3cqy28wumn8ghj7un9d3shjtnyv9kh2uewd9hsygzenanl0hmkjnrq8fksvdhpt67xzrdh0h8agltwt5znsmvzr7e74ypsgqqqw4rs6mxhd7"
+								>LNDhub</DropdownItem
+							>
+						</Dropdown>
+						<Button href="https://bitcointxoko.com">Billetera</Button>
 					</div>
 				</TabItem>
 				<TabItem class="w-full divide-y">

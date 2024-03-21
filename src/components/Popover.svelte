@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { _ } from '../services/i18n';
 	import { Popover, Button, Avatar, Skeleton } from 'flowbite-svelte';
 	import { user } from '$lib/stores/ndk';
 	import Following from './Following.svelte';
@@ -16,7 +17,7 @@
 		<div class="p-3">
 			<div class="mb-2 flex items-center justify-between">
 				<Avatar src={profile?.image} alt="profile pic" />
-				<Button href="/profile" size="xs">Seguir</Button>
+				<Button href="/profile" size="xs">{$_('profile.follow')}</Button>
 			</div>
 			<div class="text-base font-semibold leading-none text-gray-900 dark:text-white">
 				<a href="/profile">{profile?.displayName}</a>
@@ -35,13 +36,13 @@
 				<li class="me-2">
 					<a href="/" class="hover:underline">
 						<span class="font-semibold text-gray-900 dark:text-white"><Following /></span>
-						<span>Siguiendo</span>
+						<span>{$_('profile.following')}</span>
 					</a>
 				</li>
 				<li>
 					<a href="/" class="hover:underline">
 						<span class="font-semibold text-gray-900 dark:text-white"><Followers /></span>
-						<span>Seguidores</span>
+						<span>{$_('profile.followers')}</span>
 					</a>
 				</li>
 			</ul>

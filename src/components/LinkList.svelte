@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { Card } from 'flowbite-svelte';
 	import { ArrowUpRightFromSquareOutline } from 'flowbite-svelte-icons';
+	import { _ } from '../services/i18n';
+
 	export let tags: string[] | string[][] = [];
 </script>
 
@@ -11,7 +13,7 @@
 				{tag[2]}
 			</h5>
 			<a href={tag[1]} class="mt-3 inline-flex items-center text-primary-600 hover:underline">
-				visitar app
+				{$_('apps.visit')}
 				<ArrowUpRightFromSquareOutline class="ms-2.5 h-3 w-3" />
 			</a>
 		</Card>
