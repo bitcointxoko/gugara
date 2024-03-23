@@ -39,7 +39,7 @@
 	{#if balance}
 		<div class="flex items-center">
 			<div class="mr-auto flex pr-2 align-bottom font-normal text-gray-700 dark:text-gray-400">
-				{$_('mint.balance')}<span>{balance}</span>
+				{$_('mint.balance')}: {balance}
 				<svg
 					data-v-52a72b4a=""
 					xmlns="http://www.w3.org/2000/svg"

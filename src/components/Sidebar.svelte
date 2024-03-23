@@ -16,7 +16,8 @@
 		CalendarMonthSolid,
 		FilePenSolid,
 		ProfileCardSolid,
-		QuestionCircleOutline
+		QuestionCircleOutline,
+		CashSolid
 	} from 'flowbite-svelte-icons';
 	import ndk from '$lib/stores/ndk';
 	import { RelayList } from '@nostr-dev-kit/ndk-svelte-components';
@@ -60,6 +61,13 @@
 			<SidebarItem label={$_('apps.title')} href="/apps" {spanClass}>
 				<svelte:fragment slot="icon">
 					<GridSolid
+						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+					/>
+				</svelte:fragment>
+			</SidebarItem>
+			<SidebarItem label={$_('convert.title')} href="/convert" {spanClass}>
+				<svelte:fragment slot="icon">
+					<CashSolid
 						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
 					/>
 				</svelte:fragment>
