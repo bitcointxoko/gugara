@@ -5,6 +5,7 @@
 	import { Card, CardPlaceholder, Button } from 'flowbite-svelte';
 	import { ArrowRightOutline } from 'flowbite-svelte-icons';
 	import { getTagValues } from '$lib/util';
+	import { EventContent } from '@nostr-dev-kit/ndk-svelte-components';
 
 	const eventsPromise = ndk.fetchEvents({
 		kinds: [31923],
@@ -71,7 +72,7 @@
 						<p
 							class="mb-3 max-h-[125px] overflow-hidden font-normal leading-tight text-gray-700 dark:text-gray-400"
 						>
-							{getTagValues(event.tags, 'about')}
+							<EventContent {ndk} {event} />
 						</p>
 						<Button href="/calendar/{event.encode()}" color="alternative">
 							{$_('details')}

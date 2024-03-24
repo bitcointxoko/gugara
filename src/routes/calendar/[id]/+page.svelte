@@ -1,11 +1,12 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { _ } from '../../../services/i18n';
-	import ndk from '$lib/stores/ndk';
 	import { Button, Card, CardPlaceholder } from 'flowbite-svelte';
-	import { getTagValues } from '$lib/util';
-	import { PUBLIC_NOSTR_CALENDAR_CLIENT } from '$env/static/public';
 	import { ArrowRightOutline } from 'flowbite-svelte-icons';
+	import ndk from '$lib/stores/ndk';
+	import { getTagValues } from '$lib/util';
+	import { EventContent } from '@nostr-dev-kit/ndk-svelte-components';
+	import { PUBLIC_NOSTR_CALENDAR_CLIENT } from '$env/static/public';
 
 	export let data: PageData;
 
@@ -58,7 +59,7 @@
 				</div>
 			</div>
 			<p class="mb-3 font-normal leading-tight text-gray-700 dark:text-gray-400">
-				{getTagValues(event.tags, 'about')}
+				<EventContent {ndk} {event} />
 			</p>
 		</Card>
 	{/await}
