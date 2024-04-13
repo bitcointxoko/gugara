@@ -46,8 +46,10 @@
 	"type": "module",
 	"dependencies": {
 		"@nostr-dev-kit/ndk": "^2.5.0",
+		"@nostr-dev-kit/ndk-cache-dexie": "^2.3.1",
 		"@nostr-dev-kit/ndk-svelte": "^2.2.7",
 		"@nostr-dev-kit/ndk-svelte-components": "^2.2.7",
+		"svelte-french-toast": "^1.2.0",
 		"svelte-i18n": "^4.0.0"
 	}
 }

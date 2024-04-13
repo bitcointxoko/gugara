@@ -1,22 +1,28 @@
 <script lang="ts">
 	import { _ } from '../../services/i18n';
+	import { onMount, onDestroy } from 'svelte';
+	import type { NDKEventStore, ExtendedBaseType } from '@nostr-dev-kit/ndk-svelte';
 	import { Card, CardPlaceholder, Button, Avatar, Skeleton } from 'flowbite-svelte';
 	import { PUBLIC_NOSTR_SHORT_NOTE_CLIENT, PUBLIC_PUBKEY } from '$env/static/public';
-	import ndk, { user } from '$lib/stores/ndk';
-
+	import ndk from '$lib/stores/ndk';
 	import Following from '../../components/Following.svelte';
 	import Followers from '../../components/Followers.svelte';
 	import { EventContent } from '@nostr-dev-kit/ndk-svelte-components';
+	import type { NDKEvent } from '@nostr-dev-kit/ndk';
 
-	const userProfilePromise = user.fetchProfile();
-	const notesPromise = ndk.fetchEvents({
-		kinds: [1],
-		authors: [user.pubkey]
+	let notes: NDKEventStore<ExtendedBaseType<NDKEvent>>;
+
+	notes = $ndk.storeSubscribe({ kinds: [1], authors: [PUBLIC_PUBKEY] }, { closeOnEose: true });
+
+	onMount(() => {
+		notes = $ndk.storeSubscribe({ kinds: [1], authors: [PUBLIC_PUBKEY] }, { closeOnEose: true });
 	});
+
+	onDestroy(() => notes?.unsubscribe());
 </script>
 
 <div class="mx-4 flex flex-col items-center gap-4 pt-6">
-	{#await userProfilePromise}
+	{#await $ndk.getUser({ pubkey: PUBLIC_PUBKEY }).fetchProfile()}
 		<CardPlaceholder size="md" />
 	{:then profile}
 		<Card padding="md">
@@ -63,24 +69,11 @@
 			</div>
 		</Card>
 	{/await}
-
-	{#await notesPromise}
-		<Card>
-			<Skeleton size="xl" />
+	{#each $notes as note}
+		<Card horizontal padding="xl" size="md">
+			<p class="mb-3 overflow-hidden font-normal leading-tight text-gray-700 dark:text-gray-400">
+				<EventContent ndk={$ndk} event={note} />
+			</p>
 		</Card>
-		<Card>
-			<Skeleton size="xl" />
-		</Card>
-		<Card>
-			<Skeleton size="xl" />
-		</Card>
-	{:then notes}
-		{#each Array.from(notes) as note}
-			<Card horizontal padding="xl" size="md">
-				<p class="mb-3 overflow-hidden font-normal leading-tight text-gray-700 dark:text-gray-400">
-					<EventContent {ndk} event={note} />
-				</p>
-			</Card>
-		{/each}
-	{/await}
+	{/each}
 </div>

@@ -24,7 +24,7 @@
 	}
 
 	function satsToEuro() {
-		return (euro = (sats / moscowTime).toFixed(2));
+		return (euro = Number((sats / moscowTime).toFixed(2)));
 	}
 </script>
 

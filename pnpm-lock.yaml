@@ -8,12 +8,18 @@ dependencies:
   '@nostr-dev-kit/ndk':
     specifier: ^2.5.0
     version: 2.5.0(typescript@5.4.2)
+  '@nostr-dev-kit/ndk-cache-dexie':
+    specifier: ^2.3.1
+    version: 2.3.1(typescript@5.4.2)
   '@nostr-dev-kit/ndk-svelte':
     specifier: ^2.2.7
     version: 2.2.7(typescript@5.4.2)
   '@nostr-dev-kit/ndk-svelte-components':
     specifier: ^2.2.7
     version: 2.2.7(postcss-load-config@5.0.3)(postcss@8.4.35)(svelte@4.2.12)(typescript@5.4.2)
+  svelte-french-toast:
+    specifier: ^1.2.0
+    version: 1.2.0(svelte@4.2.12)
   svelte-i18n:
     specifier: ^4.0.0
     version: 4.0.0(svelte@4.2.12)
@@ -473,6 +479,12 @@ packages:
       '@noble/hashes': 1.3.1
     dev: false
 
+  /@noble/curves@1.4.0:
+    resolution: {integrity: sha512-p+4cb332SFCrReJkCYe8Xzm0OWi4Jji5jVdIZRL/PmacmDkFNw6MrrV+gGpiPxLHbV+zKFRywUWbaseT+tZRXg==}
+    dependencies:
+      '@noble/hashes': 1.4.0
+    dev: false
+
   /@noble/hashes@1.3.1:
     resolution: {integrity: sha512-EbqwksQwz9xDRGfDST86whPBgM65E0OH/pCgqW0GBVzO22bNE+NuIbeTb714+IfSjU3aRk47EUvXIb5bTsenKA==}
     engines: {node: '>= 16'}
@@ -480,6 +492,11 @@ packages:
 
   /@noble/hashes@1.3.3:
     resolution: {integrity: sha512-V7/fPHgl+jsVPXqqeOzT8egNj2iBIVt+ECeMMG8TdcnTikP3oaBtUVqpT/gYCR68aEBJSF+XbYUxStjbFMqIIA==}
+    engines: {node: '>= 16'}
+    dev: false
+
+  /@noble/hashes@1.4.0:
+    resolution: {integrity: sha512-V1JJ1WTRUqHHrOSh597hURcMqVKVGL/ea3kv0gSnEdsEZ0/+VyPghM1lMNGc00z7CIQorSvbKpuJkxvuHbvdbg==}
     engines: {node: '>= 16'}
     dev: false
 
@@ -507,6 +524,19 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
     dev: true
+
+  /@nostr-dev-kit/ndk-cache-dexie@2.3.1(typescript@5.4.2):
+    resolution: {integrity: sha512-6R0PYLBW8TmX4mHfPxdFXVpypouZ0RFdSKBtITXsiujww0l4MBR3GGOmc8hVpr0O56Qvtr9Kv4P+34U/7PGc7g==}
+    dependencies:
+      '@nostr-dev-kit/ndk': 2.7.1(typescript@5.4.2)
+      debug: 4.3.4
+      dexie: 3.2.7
+      nostr-tools: 1.17.0(typescript@5.4.2)
+      typescript-lru-cache: 2.0.0
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+    dev: false
 
   /@nostr-dev-kit/ndk-svelte-components@2.2.7(postcss-load-config@5.0.3)(postcss@8.4.35)(svelte@4.2.12)(typescript@5.4.2):
     resolution: {integrity: sha512-Gr+QbvOiJUTRWmuTAsZDbLFDLif+1JSeieOFQeA/bSXdjF/zn78GrehWbos0Et0QfTwHCuFcrNaZLCy05Q4LpA==}
@@ -554,6 +584,26 @@ packages:
   /@nostr-dev-kit/ndk@2.5.0(typescript@5.4.2):
     resolution: {integrity: sha512-A2nRgjjLScDhGZGPWx8xUIJM66dJWScdWQoCn/tI1Gtwpple+C2Jp7C9t3mb0oF3bwd2nsV6qwS//wdrH8QvYQ==}
     dependencies:
+      '@noble/hashes': 1.3.3
+      '@noble/secp256k1': 2.0.0
+      '@scure/base': 1.1.5
+      debug: 4.3.4
+      light-bolt11-decoder: 3.0.0
+      node-fetch: 3.3.2
+      nostr-tools: 1.17.0(typescript@5.4.2)
+      tseep: 1.2.1
+      typescript-lru-cache: 2.0.0
+      utf8-buffer: 1.0.0
+      websocket-polyfill: 0.0.3
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+    dev: false
+
+  /@nostr-dev-kit/ndk@2.7.1(typescript@5.4.2):
+    resolution: {integrity: sha512-EVN1jy6SXMm0cRvmzZFn2VTTPxcjI515KjBawNtmuQrPwyN+4J7zWnFlWq+KtavWbAuoQnh1rv+b6yWbBhpy5g==}
+    dependencies:
+      '@noble/curves': 1.4.0
       '@noble/hashes': 1.3.3
       '@noble/secp256k1': 2.0.0
       '@scure/base': 1.1.5
@@ -1473,6 +1523,11 @@ packages:
     resolution: {integrity: sha512-RWmIqhcFf1lRYBvNmr7qTNuyCt/7/ns2jbpp1+PalgE/rDQcBT0fioSMUpJ93irlUhC5hrg4cYqe6U+0ImW0rA==}
     dependencies:
       dequal: 2.0.3
+    dev: false
+
+  /dexie@3.2.7:
+    resolution: {integrity: sha512-2a+BXvVhY5op+smDRLxeBAivE7YcYaneXJ1la3HOkUfX9zKkE/AJ8CNgjiXbtXepFyFmJNGSbmjOwqbT749r/w==}
+    engines: {node: '>=6.0'}
     dev: false
 
   /didyoumean@1.2.2:
@@ -3280,6 +3335,15 @@ packages:
       svelte: 4.2.12
     dev: true
 
+  /svelte-french-toast@1.2.0(svelte@4.2.12):
+    resolution: {integrity: sha512-5PW+6RFX3xQPbR44CngYAP1Sd9oCq9P2FOox4FZffzJuZI2mHOB7q5gJBVnOiLF5y3moVGZ7u2bYt7+yPAgcEQ==}
+    peerDependencies:
+      svelte: ^3.57.0 || ^4.0.0
+    dependencies:
+      svelte: 4.2.12
+      svelte-writable-derived: 3.1.1(svelte@4.2.12)
+    dev: false
+
   /svelte-hmr@0.15.3(svelte@4.2.12):
     resolution: {integrity: sha512-41snaPswvSf8TJUhlkoJBekRrABDXDMdpNpT2tfHIv4JuhgvHqLMhEPGtaQn0BmbNSTkuz2Ed20DF2eHw0SmBQ==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
@@ -3358,6 +3422,14 @@ packages:
     resolution: {integrity: sha512-sBLLrWMMInx5iidGlbtlCBAu8CzSixdqOkbhizdalULXBvYMPACp0GtzmyBLEa77hbaMVySZzApIaNG4B4OVmg==}
     dependencies:
       dayjs: 1.11.10
+    dev: false
+
+  /svelte-writable-derived@3.1.1(svelte@4.2.12):
+    resolution: {integrity: sha512-w4LR6/bYZEuCs7SGr+M54oipk/UQKtiMadyOhW0PTwAtJ/Ai12QS77sLngEcfBx2q4H8ZBQucc9ktSA5sUGZWw==}
+    peerDependencies:
+      svelte: ^3.2.1 || ^4.0.0-next.1 || ^5.0.0-next.94
+    dependencies:
+      svelte: 4.2.12
     dev: false
 
   /svelte@4.2.12:

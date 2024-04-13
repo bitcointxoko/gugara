@@ -1,17 +1,19 @@
 <script lang="ts">
 	import { _ } from '../services/i18n';
+	import ndk from '$lib/stores/ndk';
 	import { Popover, Button, Avatar, Skeleton } from 'flowbite-svelte';
-	import { user } from '$lib/stores/ndk';
+	// import { user } from '$lib/stores/ndk';
 	import Following from './Following.svelte';
 	import Followers from './Followers.svelte';
-	const userProfilePromise = user.fetchProfile();
+	import { PUBLIC_PUBKEY } from '$env/static/public';
+	// const userProfilePromise = user.fetchProfile();
 </script>
 
 <Popover
 	triggeredBy="#popover"
 	class="w-64 bg-white text-sm font-light text-gray-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400"
 >
-	{#await userProfilePromise}
+	{#await $ndk.getUser({ pubkey: PUBLIC_PUBKEY }).fetchProfile()}
 		<Skeleton size="sm" class="my-8" />
 	{:then profile}
 		<div class="p-3">

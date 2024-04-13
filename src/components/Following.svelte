@@ -1,14 +1,10 @@
 <script lang="ts">
-	import ndk, { user } from '$lib/stores/ndk';
+	import { PUBLIC_PUBKEY } from '$env/static/public';
+	import ndk from '$lib/stores/ndk';
 	import { Spinner } from 'flowbite-svelte';
-
-	const eventsPromise = ndk.fetchEvent({
-		kinds: [3],
-		authors: [user.pubkey]
-	});
 </script>
 
-{#await eventsPromise}
+{#await $ndk.fetchEvent({ kinds: [3], authors: [PUBLIC_PUBKEY] })}
 	<Spinner size={4} />
 {:then event}
 	{event?.tags.length}

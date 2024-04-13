@@ -1,23 +1,53 @@
-import ndk from '$lib/stores/ndk';
-import { NDKNip07Signer } from '@nostr-dev-kit/ndk';
-import type { NDKUser, NDKUserProfile } from '@nostr-dev-kit/ndk';
+import { type NDKUser, NDKKind, NDKNip07Signer, NDKEvent } from '@nostr-dev-kit/ndk';
+import { writable } from 'svelte/store';
 
-export let currentUser: NDKUser | null;
-export let currentUserProfile: NDKUserProfile | null;
+const currentUser = writable<NDKUser | null>(null);
 
-export async function login() {
-	const signer = new NDKNip07Signer();
-	ndk.signer = signer;
-	signer.user().then((user) => {
-		user.ndk = ndk;
-		user.fetchProfile().then((eventSet) => {
-			console.log(user);
-			currentUser = user as NDKUser;
-			currentUserProfile = user.profile as NDKUserProfile;
-		});
-	});
-}
+// Store the user's current follower list as an array of pubkeys
+export const currentUserFollows = writable<string[]>([]);
+// Store the user's app settings for Listr
+// export const currentUserSettings = writable<App.UserSettings | null>(null);
 
-export async function logout() {
-	currentUserProfile = null;
-}
+/**
+ * Fetch the follows for a user, formatted as an array of pubkeys
+ * @param user the user who you want to fetch follows for
+ * @returns an array of pubkeys of all the users they follow
+ */
+// export async function fetchUserFollows(user: NDKUser): Promise<string[]> {
+// 	const followsSet = await user.follows();
+// 	return Array.from(followsSet).map((user) => user.pubkey);
+// }
+
+/**
+ * Fetch the app specific settings for Listr
+ * @param user the user you want to fetch settings for
+ * @returns A promise object with the settings or null
+ */
+// export async function fetchUserSettings(user: NDKUser): Promise<App.UserSettings> {
+//     if (!user || !user.ndk) throw new Error("No logged in user or NDK instance");
+//     const ndk = user.ndk;
+//     const settingsEvents = await ndk.fetchEvents({
+//         kinds: [NDKKind.AppSpecificData],
+//         authors: [user.pubkey],
+//         "#d": ["listr/settings/v1"],
+//     });
+//     const eventsArray = Array.from(settingsEvents);
+
+//     let settings: App.UserSettings = { devMode: false };
+
+//     if (eventsArray.length === 1) {
+//         const event: NDKEvent = eventsArray[0] as NDKEvent;
+//         let signer: NDKNip07Signer;
+//         if (!ndk.signer) {
+//             signer = new NDKNip07Signer();
+//             ndk.signer = signer;
+//         }
+//         await event.decrypt(user);
+//         settings = JSON.parse(event.content);
+//     } else if (eventsArray.length > 1) {
+//         console.error("Many settings events", eventsArray);
+//     }
+//     return settings;
+// }
+
+export default currentUser;

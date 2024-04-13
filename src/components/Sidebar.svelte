@@ -17,19 +17,37 @@
 		FilePenSolid,
 		ProfileCardSolid,
 		QuestionCircleOutline,
-		CashSolid
+		CashSolid,
+		ArrowRightToBracketSolid,
+		ArrowLeftToBracketSolid
 	} from 'flowbite-svelte-icons';
 	import ndk from '$lib/stores/ndk';
-	import { RelayList } from '@nostr-dev-kit/ndk-svelte-components';
+	import currentUser from '$lib/stores/currentUser';
+	import { Avatar, RelayList } from '@nostr-dev-kit/ndk-svelte-components';
+	import SigninModal from './signin/SigninModal.svelte';
+	import { signout } from '$lib/utils/auth';
 
 	$: activeUrl = $page.url.pathname;
 
 	let spanClass = 'flex-1 ms-3 whitespace-nowrap';
+
+	let signinVisible = false;
+
+	function toggleSigninMenu() {
+		signinVisible = !signinVisible;
+	}
 </script>
 
 <Sidebar {activeUrl}>
 	<SidebarWrapper>
 		<SidebarGroup>
+			{#if $currentUser}
+				<SidebarItem label={$currentUser.profile?.name} {spanClass}>
+					<svelte:fragment slot="icon">
+						<Avatar ndk={$ndk} user={$currentUser} class="h-6 w-6 rounded-full" />
+					</svelte:fragment>
+				</SidebarItem>
+			{/if}
 			<SidebarItem label={$_('home')} href="/">
 				<svelte:fragment slot="icon">
 					<HomeSolid
@@ -79,6 +97,23 @@
 					/>
 				</svelte:fragment>
 			</SidebarItem>
+			{#if !$currentUser}
+				<SidebarItem label="Sign in" on:click={toggleSigninMenu} {spanClass}>
+					<svelte:fragment slot="icon">
+						<ArrowLeftToBracketSolid
+							class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+						/>
+					</svelte:fragment>
+				</SidebarItem>
+			{:else if $currentUser}
+				<SidebarItem label="Sign out" {spanClass} on:click={signout}>
+					<svelte:fragment slot="icon">
+						<ArrowRightToBracketSolid
+							class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+						/>
+					</svelte:fragment>
+				</SidebarItem>
+			{/if}
 		</SidebarGroup>
 		<SidebarCta
 			label={$_('relays.title')}
@@ -91,7 +126,8 @@
 					{$_('relays.tooltip')}
 				</Tooltip>
 			</svelte:fragment>
-			<RelayList {ndk} />
+			<RelayList ndk={$ndk} />
 		</SidebarCta>
 	</SidebarWrapper>
 </Sidebar>
+<SigninModal {signinVisible} />
