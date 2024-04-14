@@ -6,9 +6,15 @@
 	import ndk from '$lib/stores/ndk';
 	import { getTagValues } from '$lib/util';
 	import { EventContent } from '@nostr-dev-kit/ndk-svelte-components';
-	import { PUBLIC_NOSTR_CALENDAR_CLIENT } from '$env/static/public';
+	import RsvpModal from '../../../components/RsvpModal.svelte';
 
 	export let data: PageData;
+
+	let modalVisible = false;
+
+	function toggleRsvpModal() {
+		modalVisible = !modalVisible;
+	}
 </script>
 
 <main class="mx-4 my-4 flex flex-col items-center gap-4">
@@ -54,7 +60,7 @@
 						</div>
 					</div>
 					<div class="mr-2">
-						<Button href="{PUBLIC_NOSTR_CALENDAR_CLIENT}{event.encode()}">
+						<Button on:click={toggleRsvpModal}>
 							{$_('meetup.rsvp')}
 							<ArrowRightOutline class="ms-2 h-3.5 w-3.5 text-white" />
 						</Button>
@@ -64,6 +70,7 @@
 					<EventContent ndk={$ndk} {event} />
 				</p>
 			</Card>
+			<RsvpModal {event} {modalVisible} />
 		{/if}
 	{/await}
 </main>

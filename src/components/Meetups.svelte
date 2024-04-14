@@ -2,9 +2,16 @@
 	import { _ } from '../services/i18n';
 	import ndk from '$lib/stores/ndk';
 	import { getTagValues } from '$lib/util';
-	import { PUBLIC_NOSTR_CALENDAR_CLIENT, PUBLIC_PUBKEY } from '$env/static/public';
+	import { PUBLIC_PUBKEY } from '$env/static/public';
 	import { Card, Button, Skeleton } from 'flowbite-svelte';
 	import { ArrowUpRightFromSquareOutline } from 'flowbite-svelte-icons';
+	import RsvpModal from './RsvpModal.svelte';
+
+	let modalVisible = false;
+
+	function toggleRsvpModal() {
+		modalVisible = !modalVisible;
+	}
 </script>
 
 <Card>
@@ -42,14 +49,15 @@
 							})}
 						</p>
 						<p class="pb-1 font-normal leading-tight text-gray-700 dark:text-gray-400">
-							{#if getTagValues(event.tags, 'location') != null}
+							{#if getTagValues(event.tags, 'location')}
 								📍 {getTagValues(event.tags, 'location')}
 							{:else}
 								📍 TBD
 							{/if}
 						</p>
 					</div>
-					<Button href="{PUBLIC_NOSTR_CALENDAR_CLIENT}{event.encode()}">{$_('meetup.rsvp')}</Button>
+					<Button on:click={toggleRsvpModal}>{$_('meetup.rsvp')}</Button>
+					<RsvpModal {event} {modalVisible} />
 				</div>
 			{/if}
 		{/await}

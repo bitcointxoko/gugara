@@ -9,9 +9,29 @@ function setupI18n({ withLocale: _locale } = { withLocale: 'en' }) {
 			details: 'Details',
 			home: 'Home',
 			sats: 'sats',
+			signin: {
+				signin: 'Sign in',
+				extension: 'Extension',
+				extensionHelp: 'Use a nostr extension to sign in.',
+				nostrConnect: 'Nostr Connect',
+				nostrConnectHelp:
+					"A NIP-46 remote signer allows you to keep your private key secured in a single location and remotely sign Nostr events. Create a token with full event permissions and then enter it below. You'll only have to do this once.",
+				token: 'Token',
+				submit: 'Submit',
+				haveKeys: 'I already have nostr keys',
+				noKeys: "I don't have nostr keys yet",
+				signup: 'Sign up',
+				signupHelp: 'Sign up with email on Flockstr',
+				flockstr: 'Flockstr'
+			},
 			meetup: {
 				title: 'Next meetup',
-				rsvp: 'RSVP'
+				rsvp: 'RSVP',
+				areYouComing: 'Are you coming?',
+				yes: 'Yes',
+				maybe: 'Maybe',
+				no: 'No',
+				confirm: 'Confirm'
 			},
 			mint: {
 				title: 'Mint',
@@ -93,9 +113,29 @@ function setupI18n({ withLocale: _locale } = { withLocale: 'en' }) {
 			details: 'Detalles',
 			home: 'Inicio',
 			sats: 'sats',
+			signin: {
+				signin: 'Iniciar sesión',
+				extension: 'Extensión',
+				extensionHelp: 'Utilizar una extensión nostr para iniciar sesión.',
+				nostrConnect: 'Nostr Connect',
+				nostrConnectHelp:
+					'Un firmante remoto NIP-46 te permite mantener tu clave privada segura en una única ubicación y firmar remotamente eventos de Nostr. Crea un token con todos los permisos para eventos e introdúcelo a continuación. Sólo tendrás que hacerlo una vez.',
+				token: 'Token',
+				submit: 'Enviar',
+				haveKeys: 'Ya tengo claves nostr',
+				noKeys: 'Aún no tengo claves nostr',
+				signup: 'Registrarse',
+				signupHelp: 'Apuntarse con correo en Flockstr',
+				flockstr: 'Flockstr'
+			},
 			meetup: {
 				title: 'Próximo meetup',
-				rsvp: 'RSVP'
+				rsvp: 'RSVP',
+				areYouComing: 'Vas a venir?',
+				yes: 'Sí',
+				maybe: 'No estoy seguro',
+				no: 'No',
+				confirm: 'Confirmar'
 			},
 			mint: {
 				title: 'Mint',

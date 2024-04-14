@@ -4,7 +4,7 @@
 	import { onMount, onDestroy } from 'svelte';
 	import type { NDKEventStore, ExtendedBaseType } from '@nostr-dev-kit/ndk-svelte';
 	import { PUBLIC_NOSTR_CALENDAR_CLIENT, PUBLIC_PUBKEY } from '$env/static/public';
-	import { Card, CardPlaceholder, Button } from 'flowbite-svelte';
+	import { Card, Button } from 'flowbite-svelte';
 	import { ArrowRightOutline } from 'flowbite-svelte-icons';
 	import { getTagValues } from '$lib/util';
 	import { EventContent } from '@nostr-dev-kit/ndk-svelte-components';
@@ -37,7 +37,7 @@
 	<section class="gap-6">
 		{#each $events as event}
 			<div class="my-4 space-y-4">
-				<Card img={getTagValues(event.tags, 'image')}>
+				<Card img={String(getTagValues(event.tags, 'image'))}>
 					<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 						{getTagValues(event.tags, 'name')}
 					</h5>

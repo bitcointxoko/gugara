@@ -17,6 +17,9 @@ dependencies:
   '@nostr-dev-kit/ndk-svelte-components':
     specifier: ^2.2.7
     version: 2.2.7(postcss-load-config@5.0.3)(postcss@8.4.35)(svelte@4.2.12)(typescript@5.4.2)
+  nostr-login:
+    specifier: ^1.1.0
+    version: 1.1.0(typescript@5.4.2)
   svelte-french-toast:
     specifier: ^1.2.0
     version: 1.2.0(svelte@4.2.12)
@@ -2612,6 +2615,16 @@ packages:
     resolution: {integrity: sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /nostr-login@1.1.0(typescript@5.4.2):
+    resolution: {integrity: sha512-mbU+qKvUjkpg52j8KGAEcRqjt8Va8tIlG1yqKYO9XxEmmJ5G7t2V5tYmzKbFhdq5iwxM56MDpeE2Br4FZ4Emcw==}
+    dependencies:
+      '@nostr-dev-kit/ndk': 2.7.1(typescript@5.4.2)
+      nostr-tools: 1.17.0(typescript@5.4.2)
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+    dev: false
 
   /nostr-tools@1.17.0(typescript@5.4.2):
     resolution: {integrity: sha512-LZmR8GEWKZeElbFV5Xte75dOeE9EFUW/QLI1Ncn3JKn0kFddDKEfBbFN8Mu4TMs+L4HR/WTPha2l+PPuRnJcMw==}
