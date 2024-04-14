@@ -7,6 +7,10 @@
 	import Onboarding from '../components/Onboarding.svelte';
 </script>
 
+<svelte:head>
+	<title>Bitcoin Txoko</title>
+	<meta name="description" content={`Bitcoin Txoko, a bitcoin and nostr community in Euskadi.`} />
+</svelte:head>
 <main>
 	<div class="mx-4 mb-4 flex flex-col items-center gap-4 pt-6">
 		<About />

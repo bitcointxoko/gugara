@@ -1,11 +1,14 @@
 <script lang="ts">
-	import { PUBLIC_PUBKEY } from '$env/static/public';
-	import ndk from '$lib/stores/ndk';
+	import type { NDKUser } from '@nostr-dev-kit/ndk';
 	import { Spinner } from 'flowbite-svelte';
+
+	export let user: NDKUser;
+
+	let follows = user.follows();
 </script>
 
-{#await $ndk.fetchEvent({ kinds: [3], authors: [PUBLIC_PUBKEY] })}
+{#await follows}
 	<Spinner size={4} />
-{:then event}
-	{event?.tags.length}
+{:then users}
+	{users.size}
 {/await}

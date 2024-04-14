@@ -6,9 +6,9 @@
 	import type { NDKEvent } from '@nostr-dev-kit/ndk';
 	import { PUBLIC_NOSTR_LONG_FORM_CLIENT, PUBLIC_PUBKEY } from '$env/static/public';
 	import Tags from '../../components/Tags.svelte';
-	import { Card, Button, CardPlaceholder } from 'flowbite-svelte';
+	import { Card, Button } from 'flowbite-svelte';
 	import { ArrowRightOutline } from 'flowbite-svelte-icons';
-	import { readingTime, getTagValues } from '$lib/util';
+	import { readingTime } from '$lib/util';
 
 	let events: NDKEventStore<ExtendedBaseType<NDKEvent>>;
 
@@ -33,15 +33,23 @@
 	onDestroy(() => events?.unsubscribe());
 </script>
 
+<svelte:head>
+	<title>Articles - Bitcoin Txoko</title>
+	<meta
+		name="description"
+		content={`The library of Bitcoin Txoko, where you can find our guides and explainers.`}
+	/>
+</svelte:head>
+
 <main class="mx-4 my-4 flex flex-row flex-wrap items-start justify-center">
 	<section class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
 		{#each $events as event}
-			<Card img={String(getTagValues(event.tags, 'image'))}>
+			<Card img={event.tagValue('image')}>
 				<h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-					{getTagValues(event.tags, 'title')}
+					{event.tagValue('title')}
 				</h5>
 				<div class="mx-1 mb-2 border-b border-dotted text-sm font-light">
-					{new Date(Number(getTagValues(event.tags, 'published_at')) * 1000).toLocaleDateString()}
+					{new Date(Number(event.tagValue('published_at')) * 1000).toLocaleDateString()}
 					//
 					<span>
 						{readingTime(event.content)}
@@ -50,7 +58,7 @@
 				</div>
 				<Tags tags={event.tags.filter((v) => v[0] === 't')} />
 				<p class="mb-3 font-normal leading-tight text-gray-700 dark:text-gray-400">
-					{getTagValues(event.tags, 'summary')}
+					{event.tagValue('summary')}
 				</p>
 				<Button href="{PUBLIC_NOSTR_LONG_FORM_CLIENT}a/{event.encode()}" class="mr-1">
 					Habla.news <ArrowRightOutline class="ms-2 h-3.5 w-3.5 text-white" />

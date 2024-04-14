@@ -1,8 +1,11 @@
 <script>
 	import { Card } from 'flowbite-svelte';
 	import { _ } from '../services/i18n';
-	import { PUBLIC_NAME } from '$env/static/public';
+	import ndk from '$lib/stores/ndk';
+	import { PUBLIC_NAME, PUBLIC_PUBKEY } from '$env/static/public';
 	import Popover from './Popover.svelte';
+
+	const user = $ndk.getUser({ pubkey: PUBLIC_PUBKEY });
 </script>
 
 <Card size="lg">
@@ -10,7 +13,7 @@
 		Ongi etorri! 🤙
 	</h5>
 	<p class="font-normal leading-tight text-gray-700 dark:text-gray-400">
-		<a id="popover" href="/profile"
+		<a id="popover-0" href="/u/{user.npub}"
 			><span class="font-bold decoration-dotted hover:underline">{PUBLIC_NAME}</span>
 		</a>
 		es un espacio abierto de intercambio y aprendizaje. Surgió de manera bastante espontánea al juntarse
@@ -26,5 +29,5 @@
 		dentro del propio grupo, cada uno aporta lo que puede y se va creando esa infrastuctura a disposicion
 		de todos.
 	</p>
-	<Popover />
+	<Popover {user} i={0} />
 </Card>

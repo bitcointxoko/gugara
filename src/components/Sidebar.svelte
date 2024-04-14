@@ -90,15 +90,15 @@
 					/>
 				</svelte:fragment>
 			</SidebarItem>
-			<SidebarItem label={$_('profile.title')} href="/profile" {spanClass}>
+			<!-- <SidebarItem label={$_('profile.title')} href="/profile" {spanClass}>
 				<svelte:fragment slot="icon">
 					<ProfileCardSolid
 						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
 					/>
 				</svelte:fragment>
-			</SidebarItem>
+			</SidebarItem> -->
 			{#if !$currentUser}
-				<SidebarItem label="Sign in" on:click={toggleSigninMenu} {spanClass}>
+				<SidebarItem label={$_('signin.signin')} on:click={toggleSigninMenu} {spanClass}>
 					<svelte:fragment slot="icon">
 						<ArrowLeftToBracketSolid
 							class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -106,7 +106,7 @@
 					</svelte:fragment>
 				</SidebarItem>
 			{:else if $currentUser}
-				<SidebarItem label="Sign out" {spanClass} on:click={signout}>
+				<SidebarItem label={$_('signin.signout')} {spanClass} on:click={signout}>
 					<svelte:fragment slot="icon">
 						<ArrowRightToBracketSolid
 							class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"

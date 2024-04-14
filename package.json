@@ -45,10 +45,12 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@getalby/bitcoin-connect": "^3.2.2",
 		"@nostr-dev-kit/ndk": "^2.5.0",
 		"@nostr-dev-kit/ndk-cache-dexie": "^2.3.1",
 		"@nostr-dev-kit/ndk-svelte": "^2.2.7",
 		"@nostr-dev-kit/ndk-svelte-components": "^2.2.7",
+		"lucide-svelte": "^0.368.0",
 		"nostr-login": "^1.1.0",
 		"svelte-french-toast": "^1.2.0",
 		"svelte-i18n": "^4.0.0"

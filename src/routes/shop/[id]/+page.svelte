@@ -9,6 +9,10 @@
 	const product = products.find((product) => product.choiceKey === data.product);
 </script>
 
+<svelte:head>
+	<title>{product?.name} - Bitcoin Txoko</title>
+	<meta name="description" content={`${product?.description}`} />
+</svelte:head>
 <main class="my-4 flex flex-row flex-wrap items-start justify-center">
 	{#if product}
 		<div class="max-w-4xl">

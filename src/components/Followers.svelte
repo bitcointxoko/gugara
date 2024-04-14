@@ -1,16 +1,18 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
 	import ndk from '$lib/stores/ndk';
+	import type { NDKUser } from '@nostr-dev-kit/ndk';
 	import type { NDKEvent } from '@nostr-dev-kit/ndk';
 	import type { NDKEventStore, ExtendedBaseType } from '@nostr-dev-kit/ndk-svelte';
-	import { PUBLIC_PUBKEY } from '$env/static/public';
+
+	export let user: NDKUser;
 
 	let followers: NDKEventStore<ExtendedBaseType<NDKEvent>>;
 	let totalFollowers = 0;
 
 	const filter = {
 		kinds: [3],
-		'#p': [PUBLIC_PUBKEY]
+		'#p': [user.pubkey]
 	};
 
 	followers = $ndk.storeSubscribe(filter, { closeOnEose: true });

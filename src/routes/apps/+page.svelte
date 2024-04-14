@@ -6,9 +6,16 @@
 	import { PUBLIC_PUBKEY } from '$env/static/public';
 </script>
 
+<svelte:head>
+	<title>Apps - Bitcoin Txoko</title>
+	<meta
+		name="description"
+		content={`The collection of self-hosted sovereign tools of Bitcoin Txoko.`}
+	/>
+</svelte:head>
 <main class="mx-4 my-4 flex flex-row flex-wrap items-start justify-center gap-2">
 	<div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-		{#await $ndk.fetchEvent({ kinds: [30003], authors: [PUBLIC_PUBKEY] })}
+		{#await $ndk.fetchEvent({ kinds: [30003], authors: [PUBLIC_PUBKEY], '#l': ['apps'] })}
 			<Card size="xs">
 				<div class="mb-2.5 h-2.5 w-24 rounded-full bg-emerald-500"></div>
 				<div class="mt-2 h-2 w-32 animate-pulse rounded-full bg-emerald-500"></div>

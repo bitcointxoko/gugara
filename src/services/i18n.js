@@ -11,6 +11,7 @@ function setupI18n({ withLocale: _locale } = { withLocale: 'en' }) {
 			sats: 'sats',
 			signin: {
 				signin: 'Sign in',
+				signout: 'Sign out',
 				extension: 'Extension',
 				extensionHelp: 'Use a nostr extension to sign in.',
 				nostrConnect: 'Nostr Connect',
@@ -31,7 +32,8 @@ function setupI18n({ withLocale: _locale } = { withLocale: 'en' }) {
 				yes: 'Yes',
 				maybe: 'Maybe',
 				no: 'No',
-				confirm: 'Confirm'
+				confirm: 'Confirm',
+				attendees: 'Attendees'
 			},
 			mint: {
 				title: 'Mint',
@@ -61,12 +63,19 @@ function setupI18n({ withLocale: _locale } = { withLocale: 'en' }) {
 				tooltip: 'Check out all our self-hosted apps',
 				visit: 'visit app'
 			},
-			profile: {
-				title: 'Profile',
+			user: {
+				profile: 'Profile',
 				openInClient: 'Open in client',
 				follow: 'Follow',
 				followers: 'Followers',
 				following: 'Following'
+			},
+			zap: {
+				title: 'Zap',
+				amount: 'Amount',
+				comment: 'Comment',
+				commentPlaceholder: 'Zap comment',
+				action: 'Zap'
 			},
 			relays: {
 				title: 'Relays',
@@ -115,6 +124,7 @@ function setupI18n({ withLocale: _locale } = { withLocale: 'en' }) {
 			sats: 'sats',
 			signin: {
 				signin: 'Iniciar sesión',
+				signout: 'Cerrar sesión',
 				extension: 'Extensión',
 				extensionHelp: 'Utilizar una extensión nostr para iniciar sesión.',
 				nostrConnect: 'Nostr Connect',
@@ -135,7 +145,8 @@ function setupI18n({ withLocale: _locale } = { withLocale: 'en' }) {
 				yes: 'Sí',
 				maybe: 'No estoy seguro',
 				no: 'No',
-				confirm: 'Confirmar'
+				confirm: 'Confirmar',
+				attendees: 'Asistentes'
 			},
 			mint: {
 				title: 'Mint',
@@ -166,12 +177,19 @@ function setupI18n({ withLocale: _locale } = { withLocale: 'en' }) {
 				tooltip: 'Consulta toda las aplicaciones autoalojadas',
 				visit: 'visitar app'
 			},
-			profile: {
+			user: {
 				title: 'Perfil',
 				openInClient: 'Abrir en cliente',
 				follow: 'Seguir',
 				followers: 'Seguidores',
 				following: 'Siguiendo'
+			},
+			zap: {
+				title: 'Zap',
+				amount: 'Amount',
+				comment: 'Comment',
+				commentPlaceholder: 'Zap comment',
+				action: 'Zap'
 			},
 			relays: {
 				title: 'Relays',
@@ -252,7 +270,7 @@ function setupI18n({ withLocale: _locale } = { withLocale: 'en' }) {
 				tooltip: 'Autozaindutako gure aplikazioak ezagutu',
 				visit: 'app-a bisitatu'
 			},
-			profile: {
+			user: {
 				title: 'Profil',
 				openInClient: 'Bezeroan ireki',
 				follow: 'Jarraitu',
@@ -330,7 +348,7 @@ function setupI18n({ withLocale: _locale } = { withLocale: 'en' }) {
 				tooltip: '查看所有我們自託管的應用程式',
 				visit: '訪問'
 			},
-			profile: {
+			user: {
 				title: '檔案',
 				openInClient: '在客戶端中打開',
 				follow: '關注',
