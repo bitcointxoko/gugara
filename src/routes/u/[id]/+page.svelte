@@ -6,8 +6,8 @@
 	import ndk from '$lib/stores/ndk';
 	import type { NDKEvent } from '@nostr-dev-kit/ndk';
 	import { Avatar, Button, Card, CardPlaceholder } from 'flowbite-svelte';
-	import Following from '../../../components/Following.svelte';
-	import Followers from '../../../components/Followers.svelte';
+	import Following from '../../../components/user/Following.svelte';
+	import Followers from '../../../components/user/Followers.svelte';
 	import { EventContent } from '@nostr-dev-kit/ndk-svelte-components';
 	import { PUBLIC_NOSTR_SHORT_NOTE_CLIENT } from '$env/static/public';
 	import LikeActions from '../../../components/actions/LikeActions.svelte';

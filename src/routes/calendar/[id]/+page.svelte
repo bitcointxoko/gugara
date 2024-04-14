@@ -23,7 +23,7 @@
 		<CardPlaceholder size="xxl" />
 	{:then event}
 		{#if event}
-			<Card img={event.tagValue('image')}>
+			<Card size="lg" img={event.tagValue('image')}>
 				<h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 					{event.tagValue('name')}
 				</h5>

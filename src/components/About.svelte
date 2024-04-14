@@ -3,7 +3,7 @@
 	import { _ } from '../services/i18n';
 	import ndk from '$lib/stores/ndk';
 	import { PUBLIC_NAME, PUBLIC_PUBKEY } from '$env/static/public';
-	import Popover from './Popover.svelte';
+	import Popover from './user/Popover.svelte';
 
 	const user = $ndk.getUser({ pubkey: PUBLIC_PUBKEY });
 </script>

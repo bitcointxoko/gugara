@@ -5,7 +5,6 @@
 	import type { NDKEventStore, ExtendedBaseType } from '@nostr-dev-kit/ndk-svelte';
 	import { PUBLIC_PUBKEY } from '$env/static/public';
 	import { Card } from 'flowbite-svelte';
-	import { getTagValues } from '$lib/util';
 	import { EventContent } from '@nostr-dev-kit/ndk-svelte-components';
 	import type { NDKEvent } from '@nostr-dev-kit/ndk';
 	import Attendees from '../../components/Attendees.svelte';
@@ -45,11 +44,11 @@
 	<section class="gap-6">
 		{#each $events as event}
 			<div class="my-4 space-y-4">
-				<Card img={String(getTagValues(event.tags, 'image'))}>
+				<Card size="lg" img={String(event.tagValue('image'))}>
 					<h5
 						class=" mr-auto text-2xl font-bold tracking-tight text-gray-900 hover:text-gray-600 dark:text-white dark:hover:text-gray-300"
 					>
-						<a href="/calendar/{event.encode()}"> {getTagValues(event.tags, 'name')}</a>
+						<a href="/calendar/{event.encode()}">{event.tagValue('name')}</a>
 					</h5>
 					<MeetupInfo {event} />
 					<Attendees {event} />

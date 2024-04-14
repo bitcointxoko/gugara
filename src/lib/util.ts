@@ -9,10 +9,3 @@ export function readingTime(text: string): number {
 	const words = text.trim().split(/\s+/).length;
 	return Math.ceil(words / wpm);
 }
-
-export function getTagValues(tags: string[][], name: string): string[] | null {
-	const found = tags.find((v) => v[0] === name);
-	if (!found) return null;
-	const [, ...values] = found;
-	return values;
-}

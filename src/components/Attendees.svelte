@@ -3,7 +3,7 @@
 	import ndk from '$lib/stores/ndk';
 	import { Avatar } from 'flowbite-svelte';
 	import type { NDKEvent } from '@nostr-dev-kit/ndk';
-	import Popover from './Popover.svelte';
+	import Popover from './user/Popover.svelte';
 
 	export let event: NDKEvent;
 </script>
