@@ -90,13 +90,6 @@
 					/>
 				</svelte:fragment>
 			</SidebarItem>
-			<!-- <SidebarItem label={$_('profile.title')} href="/profile" {spanClass}>
-				<svelte:fragment slot="icon">
-					<ProfileCardSolid
-						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-					/>
-				</svelte:fragment>
-			</SidebarItem> -->
 			{#if !$currentUser}
 				<SidebarItem label={$_('signin.signin')} on:click={toggleSigninMenu} {spanClass}>
 					<svelte:fragment slot="icon">

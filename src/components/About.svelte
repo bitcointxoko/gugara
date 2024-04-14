@@ -29,5 +29,5 @@
 		dentro del propio grupo, cada uno aporta lo que puede y se va creando esa infrastuctura a disposicion
 		de todos.
 	</p>
-	<Popover {user} i={0} />
+	<Popover {user} />
 </Card>

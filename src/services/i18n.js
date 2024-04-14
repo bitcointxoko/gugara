@@ -33,7 +33,8 @@ function setupI18n({ withLocale: _locale } = { withLocale: 'en' }) {
 				maybe: 'Maybe',
 				no: 'No',
 				confirm: 'Confirm',
-				attendees: 'Attendees'
+				attendees: 'Attendees',
+				isOver: 'event is over'
 			},
 			mint: {
 				title: 'Mint',
@@ -146,7 +147,8 @@ function setupI18n({ withLocale: _locale } = { withLocale: 'en' }) {
 				maybe: 'No estoy seguro',
 				no: 'No',
 				confirm: 'Confirmar',
-				attendees: 'Asistentes'
+				attendees: 'Asistentes',
+				isOver: 'terminado'
 			},
 			mint: {
 				title: 'Mint',
