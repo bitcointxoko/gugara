@@ -13,6 +13,7 @@
 		Modal,
 		Search,
 		Select,
+		Spinner,
 		Textarea
 	} from 'flowbite-svelte';
 	import toast from 'svelte-french-toast';
@@ -20,6 +21,7 @@
 	import timezones from '$lib/data/timezone.json';
 	import type { NDKEventStore, ExtendedBaseType } from '@nostr-dev-kit/ndk-svelte';
 	import { onMount, onDestroy } from 'svelte';
+	import Geohash from 'latlon-geohash';
 
 	let calendarStore: NDKEventStore<ExtendedBaseType<NDKEvent>>;
 	let calendars: [{ value: string; name: string }];
@@ -52,7 +54,7 @@
 	onDestroy(() => calendarStore?.unsubscribe());
 
 	let event: {
-		name: string;
+		title: string;
 		description: string;
 		image: string;
 		start: string;
@@ -64,7 +66,7 @@
 		g: string;
 		calendar: string;
 	} = {
-		name: '',
+		title: '',
 		description: '',
 		image: '',
 		start: '',
@@ -87,9 +89,8 @@
 			const kind31923 = new NDKEvent($ndk);
 			kind31923.kind = 31923;
 			kind31923.content = event.description;
-
 			kind31923.tags = [
-				['name', event.name],
+				['title', event.title],
 				['description', event.description as string],
 				['image', event.image],
 				['start', String(Math.floor(new Date(event.start).getTime() / 1000))],
@@ -98,21 +99,11 @@
 				['p', $currentUser.pubkey, '', 'host']
 			];
 
-			if (event.location) {
+			if (location) {
 				kind31923.tags.push(
-					[
-						'location',
-						`${event.location.name}, ${event.location.address}`,
-						event.location.name,
-						event.location.address
-					],
-					[
-						'address',
-						`${event.location.name}, ${event.location.address}`,
-						event.location.name,
-						event.location.address
-					]
-					// ['g', '']
+					['location', `${location.name}, ${location.address}`, location.name, location.address],
+					['address', `${location.name}, ${location.address}`, location.name, location.address],
+					['g', location.g]
 				);
 			}
 
@@ -136,9 +127,9 @@
 		}
 	};
 
-	let modalOpen = false;
-
 	let files: FileList;
+	let uploading = false;
+	let modalOpen = false;
 
 	const uploadFile = async () => {
 		if ($currentUser) {
@@ -156,11 +147,10 @@
 					['size', String(files[0].size)]
 				];
 			}
-
-			const signature = await kind22242.sign();
-
+			kind22242.sig = await kind22242.sign();
 			const uploadAuth = kind22242.rawEvent();
 
+			uploading = true;
 			const response = await fetch(
 				`https://api.satellite.earth/v1/media/item?auth=${encodeURIComponent(JSON.stringify(uploadAuth))}`,
 				{
@@ -168,9 +158,9 @@
 					body: files[0]
 				}
 			);
-
 			const data = await response.json();
 			event.image = data.url;
+			uploading = false;
 			modalOpen = false;
 		}
 	};
@@ -188,6 +178,24 @@
 	// 	console.log(data);
 	// 	mapData = data;
 	// };
+
+	let location: {
+		lat: string;
+		lon: string;
+		name: string;
+		address: string;
+		g: string;
+	} = {
+		lat: '',
+		lon: '',
+		name: '',
+		address: '',
+		g: ''
+	};
+
+	function getGeohash(lat: string, lon: string) {
+		location.g = Geohash.encode(lat, lon);
+	}
 </script>
 
 {#if $currentUser}
@@ -195,19 +203,20 @@
 		<main class="mx-4 my-4 flex flex-col items-center gap-4">
 			{#if event.image}
 				<div>
-					<img src={event.image} alt="uploaded" />
+					<img src={event.image} alt="uploaded" class="h-64 max-w-full rounded-md" />
 				</div>
 			{/if}
 			<form on:submit={create} class="flex flex-col gap-2">
-				<div class="grid grid-cols-2 gap-2">
+				<h2 class="text-2xl font-bold text-gray-900 dark:text-white">New Event</h2>
+				<div class="grid gap-2 md:grid-cols-2">
 					<Label>
-						Event name
-						<Input type="text" bind:value={event.name} />
+						Event title
+						<Input required type="text" bind:value={event.title} />
 					</Label>
 					<Label>
 						Image
 						<div class="flex gap-2">
-							<Input type="url" bind:value={event.image} />
+							<Input required type="url" bind:value={event.image} />
 							<Button on:click={() => (modalOpen = !modalOpen)}>Upload</Button>
 							<Modal title="Upload" bind:open={modalOpen} size="sm">
 								<form on:submit|preventDefault={uploadFile} class="flex flex-col gap-2">
@@ -219,7 +228,12 @@
 											<ListgroupItem>No files</ListgroupItem>
 										{/if}
 									</Listgroup>
-									<Button type="submit">Upload</Button>
+									<Button type="submit">
+										Upload
+										{#if uploading}
+											<Spinner size={4} class="ml-1" />
+										{/if}
+									</Button>
 								</form>
 							</Modal>
 						</div>
@@ -228,6 +242,7 @@
 						<Label>
 							Start
 							<Input
+								required
 								type="datetime-local"
 								min={new Date().toLocaleString()}
 								bind:value={event.start}
@@ -236,6 +251,7 @@
 						<Label>
 							End
 							<Input
+								required
 								type="datetime-local"
 								min={event.start.toLocaleString()}
 								bind:value={event.end}
@@ -243,7 +259,7 @@
 						</Label>
 						<Label>
 							Time Zone
-							<Select bind:value={event.start_tzid} items={timezones} />
+							<Select required bind:value={event.start_tzid} items={timezones} />
 						</Label>
 						<Label>
 							Calendar
@@ -261,11 +277,28 @@
 						</form> -->
 						<Label>
 							Location name
-							<Input bind:value={event.location.name} />
+							<Input bind:value={location.name} />
 						</Label>
 						<Label>
 							Location address
-							<Input bind:value={event.location.address} />
+							<Input bind:value={location.address} />
+						</Label>
+						<Label>
+							Latitude
+							<Input bind:value={location.lat} />
+						</Label>
+						<Label>
+							Longitude
+							<Input bind:value={location.lon} />
+						</Label>
+						<Label>
+							Geohash
+							<div class="flex gap-2">
+								<Input bind:value={location.g} class="w-3/4" />
+								<Button on:click={() => getGeohash(location.lat, location.lon)} class="w-1/4"
+									>Get hash
+								</Button>
+							</div>
 						</Label>
 					</div>
 				</div>
