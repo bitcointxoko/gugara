@@ -19,13 +19,15 @@
 		QuestionCircleOutline,
 		CashSolid,
 		ArrowRightToBracketSolid,
-		ArrowLeftToBracketSolid
+		ArrowLeftToBracketSolid,
+		UserEditSolid
 	} from 'flowbite-svelte-icons';
 	import ndk from '$lib/stores/ndk';
 	import currentUser from '$lib/stores/currentUser';
 	import { Avatar, RelayList } from '@nostr-dev-kit/ndk-svelte-components';
 	import SigninModal from './signin/SigninModal.svelte';
 	import { signout } from '$lib/utils/auth';
+	import { PUBLIC_PUBKEY } from '$env/static/public';
 
 	$: activeUrl = $page.url.pathname;
 
@@ -106,6 +108,15 @@
 						/>
 					</svelte:fragment>
 				</SidebarItem>
+				{#if $currentUser.pubkey === PUBLIC_PUBKEY}
+					<SidebarItem label="Admin" {spanClass} href="/admin">
+						<svelte:fragment slot="icon">
+							<UserEditSolid
+								class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+							/>
+						</svelte:fragment>
+					</SidebarItem>
+				{/if}
 			{/if}
 		</SidebarGroup>
 		<SidebarCta

@@ -34,7 +34,7 @@ function setupI18n({ withLocale: _locale } = { withLocale: 'en' }) {
 				no: 'No',
 				confirm: 'Confirm',
 				attendees: 'Attendees',
-				isOver: 'event is over'
+				ended: 'ended'
 			},
 			mint: {
 				title: 'Mint',
@@ -136,7 +136,7 @@ function setupI18n({ withLocale: _locale } = { withLocale: 'en' }) {
 				haveKeys: 'Ya tengo claves nostr',
 				noKeys: 'Aún no tengo claves nostr',
 				signup: 'Registrarse',
-				signupHelp: 'Apuntarse con correo en Flockstr',
+				signupHelp: 'Apuntarse con correo electrónico en Flockstr',
 				flockstr: 'Flockstr'
 			},
 			meetup: {
@@ -148,7 +148,7 @@ function setupI18n({ withLocale: _locale } = { withLocale: 'en' }) {
 				no: 'No',
 				confirm: 'Confirmar',
 				attendees: 'Asistentes',
-				isOver: 'terminado'
+				ended: 'terminado'
 			},
 			mint: {
 				title: 'Mint',
@@ -188,9 +188,9 @@ function setupI18n({ withLocale: _locale } = { withLocale: 'en' }) {
 			},
 			zap: {
 				title: 'Zap',
-				amount: 'Amount',
-				comment: 'Comment',
-				commentPlaceholder: 'Zap comment',
+				amount: 'Cantidad',
+				comment: 'Comentario',
+				commentPlaceholder: 'Comentario para zap',
 				action: 'Zap'
 			},
 			relays: {

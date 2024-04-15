@@ -57,7 +57,7 @@
 					{$_('meetup.rsvp')}
 				</Button>
 			{:else}
-				<Button disabled>{$_('meetup.isOver')}</Button>
+				<Button disabled>{$_('meetup.ended')}</Button>
 			{/if}
 		</div>
 	</div>
