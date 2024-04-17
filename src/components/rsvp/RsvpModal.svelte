@@ -107,7 +107,7 @@
 		</div>
 		<div class="flex flex-col gap-2">
 			<h5 class="mr-auto mt-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-				{$_('signin.signup')}
+				{$_('signin.noKeys')}
 			</h5>
 			<p>{$_('signin.signupHelp')}</p>
 			<Button href="https://flockstr.com/event/{event.encode()}"

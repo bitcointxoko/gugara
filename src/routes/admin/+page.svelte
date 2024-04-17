@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { _ } from 'svelte-i18n';
 	import { PUBLIC_PUBKEY } from '$env/static/public';
 	import ndk from '$lib/stores/ndk';
 	import currentUser from '$lib/stores/currentUser';
@@ -22,6 +23,7 @@
 	import type { NDKEventStore, ExtendedBaseType } from '@nostr-dev-kit/ndk-svelte';
 	import { onMount, onDestroy } from 'svelte';
 	import Geohash from 'latlon-geohash';
+	import SigninAlert from '../../components/signin/SigninAlert.svelte';
 
 	let calendarStore: NDKEventStore<ExtendedBaseType<NDKEvent>>;
 	let calendars: [{ value: string; name: string }];
@@ -198,6 +200,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Admin - Bitcoin Txoko</title>
+	<meta name="description" content={`The admin panel of Bitcoin Txoko.`} />
+</svelte:head>
 {#if $currentUser}
 	{#if $currentUser.pubkey === PUBLIC_PUBKEY}
 		<main class="mx-4 my-4 flex flex-col items-center gap-4">
@@ -207,17 +213,17 @@
 				</div>
 			{/if}
 			<form on:submit={create} class="flex flex-col gap-2">
-				<h2 class="text-2xl font-bold text-gray-900 dark:text-white">New Event</h2>
+				<h2 class="text-2xl font-bold text-gray-900 dark:text-white">{$_('admin.newEvent')}</h2>
 				<div class="grid gap-2 md:grid-cols-2">
 					<Label>
-						Event title
+						{$_('admin.title')}
 						<Input required type="text" bind:value={event.title} />
 					</Label>
 					<Label>
-						Image
+						{$_('admin.image')}
 						<div class="flex gap-2">
 							<Input required type="url" bind:value={event.image} />
-							<Button on:click={() => (modalOpen = !modalOpen)}>Upload</Button>
+							<Button on:click={() => (modalOpen = !modalOpen)}>{$_('admin.upload')}</Button>
 							<Modal title="Upload" bind:open={modalOpen} size="sm">
 								<form on:submit|preventDefault={uploadFile} class="flex flex-col gap-2">
 									<Fileupload id="multiple_files" bind:files />
@@ -225,11 +231,11 @@
 										{#if item}
 											{item.name}
 										{:else}
-											<ListgroupItem>No files</ListgroupItem>
+											<ListgroupItem>{$_('admin.noFiles')}</ListgroupItem>
 										{/if}
 									</Listgroup>
 									<Button type="submit">
-										Upload
+										{$_('admin.upload')}
 										{#if uploading}
 											<Spinner size={4} class="ml-1" />
 										{/if}
@@ -240,7 +246,7 @@
 					</Label>
 					<div>
 						<Label>
-							Start
+							{$_('admin.start')}
 							<Input
 								required
 								type="datetime-local"
@@ -249,7 +255,7 @@
 							/>
 						</Label>
 						<Label>
-							End
+							{$_('admin.end')}
 							<Input
 								required
 								type="datetime-local"
@@ -258,60 +264,56 @@
 							/>
 						</Label>
 						<Label>
-							Time Zone
+							{$_('admin.timeZone')}
 							<Select required bind:value={event.start_tzid} items={timezones} />
 						</Label>
 						<Label>
-							Calendar
+							{$_('admin.calendar')}
 							<Select bind:value={event.calendar} items={calendars} />
 						</Label>
 					</div>
 					<div>
-						<!-- <form on:submit|preventDefault={() => searchMap(query)} class="flex flex-col gap-2">
-							<Label>
-								Search Map
-								<Search bind:value={query} on:change={() => searchMap(query)} />
-							</Label>
-							<Select items={mapData} bind:value={event.location.name}/>
-							<Button type="submit">Search</Button>
-						</form> -->
 						<Label>
-							Location name
+							{$_('admin.locationName')}
 							<Input bind:value={location.name} />
 						</Label>
 						<Label>
-							Location address
+							{$_('admin.locationAddress')}
 							<Input bind:value={location.address} />
 						</Label>
 						<Label>
-							Latitude
+							{$_('admin.latitude')}
+
 							<Input bind:value={location.lat} />
 						</Label>
 						<Label>
-							Longitude
+							{$_('admin.longitude')}
+
 							<Input bind:value={location.lon} />
 						</Label>
 						<Label>
-							Geohash
+							{$_('admin.geohash')}
+
 							<div class="flex gap-2">
 								<Input bind:value={location.g} class="w-3/4" />
-								<Button on:click={() => getGeohash(location.lat, location.lon)} class="w-1/4"
-									>Get hash
+								<Button on:click={() => getGeohash(location.lat, location.lon)} class="w-1/4">
+									{$_('admin.getHash')}
 								</Button>
 							</div>
 						</Label>
 					</div>
 				</div>
 				<Label>
-					Description
+					{$_('admin.description')}
+
 					<Textarea bind:value={event.description} />
 				</Label>
-				<Button type="submit">Submit</Button>
+				<Button type="submit">{$_('admin.submit')}</Button>
 			</form>
 		</main>
 	{:else}
 		Forbidden
 	{/if}
 {:else}
-	Sign in
+	<SigninAlert />
 {/if}

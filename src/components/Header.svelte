@@ -33,9 +33,9 @@
 		<Dropdown>
 			<DropdownItem on:click={() => setLocale('en')}>🇬🇧</DropdownItem>
 			<DropdownItem on:click={() => setLocale('es')}>🇪🇸</DropdownItem>
-			<DropdownItem on:click={() => setLocale('eu')}>
+			<!-- <DropdownItem on:click={() => setLocale('eu')}>
 				<img src="/eus.svg" alt="basque flag" />
-			</DropdownItem>
+			</DropdownItem> -->
 		</Dropdown>
 		<CloseButton on:click={() => (hidden1 = true)} class="mb-4 dark:text-white" />
 	</div>

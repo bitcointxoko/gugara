@@ -109,6 +109,25 @@ function setupI18n({ withLocale: _locale } = { withLocale: 'en' }) {
 					'With BTCPay server you can create a store to start selling your goods and services for Bitcoin, whether you want to create a Point of Sale or an online store. You can connect your existing wallet to receive transactions in Lightning. You can also link an on-chain wallet for larger transactions. It only takes a few minutes to set up. See our guide for more details.',
 				register: 'Register'
 			},
+			admin: {
+				newEvent: 'New event',
+				title: 'Event title',
+				image: 'Image',
+				upload: 'Upload',
+				noFiles: 'No files',
+				start: 'Start',
+				end: 'End',
+				timeZone: 'Time zone',
+				calendar: 'Calendar',
+				locationName: 'Location name',
+				locationAddress: 'Location address',
+				latitude: 'Latitude',
+				longitude: 'Longitude',
+				geohash: 'Geohash',
+				getHash: 'Get hash',
+				description: 'Description',
+				submit: 'Submit'
+			},
 			footer: {
 				simplex: 'SimpleX',
 				github: 'GitHub',
@@ -224,7 +243,25 @@ function setupI18n({ withLocale: _locale } = { withLocale: 'en' }) {
 					'Con el servidor BTCPay puedes crear una tienda para empezar a vender tus bienes y servicios por Bitcoin, tanto si deseas crear un Punto de Venta como una tienda online. Puedes conectar tu billetera existente para recibir transacciones en Lightning. También puedes vincular una billetera on-chain para transacciones más grandes. Sólo se tarda unos minutos en configurarlo. Consulta nuestra guía para más detalles.',
 				register: 'Registrar'
 			},
-
+			admin: {
+				newEvent: 'Nuevo evento',
+				title: 'Título del evento',
+				image: 'Imagen',
+				upload: 'Subir',
+				noFiles: 'No hay archivos',
+				start: 'Comienzo',
+				end: 'Fin',
+				timeZone: 'Zona horaria',
+				calendar: 'Calendario',
+				locationName: 'Nombre del lugar',
+				locationAddress: 'Dirección del lugar',
+				latitude: 'Latitud',
+				longitude: 'Longitud',
+				geohash: 'Geohash',
+				getHash: 'Obtener hash',
+				description: 'Descripción',
+				submit: 'Publicar'
+			},
 			footer: {
 				simplex: 'SimpleX',
 				github: 'GitHub',
