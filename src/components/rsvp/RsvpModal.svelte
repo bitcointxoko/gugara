@@ -23,35 +23,35 @@
 	let a = [];
 
 	const rsvp = async (event: NDKEvent) => {
-		if ($currentUser) {
-			if (!$ndk.signer) {
-				const signer = new NDKNip07Signer();
-				$ndk.signer = signer;
-			}
+		// if ($currentUser) {
+		// 	if (!$ndk.signer) {
+		// 		const signer = new NDKNip07Signer();
+		// 		$ndk.signer = signer;
+		// 	}
 
-			const kind31925 = new NDKEvent($ndk);
-			kind31925.kind = 31925;
+		const kind31925 = new NDKEvent($ndk);
+		kind31925.kind = 31925;
 
-			l = ['l', response as string, 'status'];
-			a = ['a', `${event.kind}:${event.author.pubkey}:${event.dTag}`];
+		l = ['l', response as string, 'status'];
+		a = ['a', `${event.kind}:${event.author.pubkey}:${event.dTag}`];
 
-			kind31925.tags = [a, L, l];
+		kind31925.tags = [a, L, l];
 
-			await kind31925
-				.publish()
-				.then(() => {
-					toast.success('Published', {
-						position: 'bottom-right'
-					});
-					goto(`/e/${kind31925.encode()}`);
+		await kind31925
+			.publish()
+			.then(() => {
+				toast.success('Published', {
+					position: 'bottom-right'
+				});
+				goto(`/e/${kind31925.encode()}`);
+			})
+			.catch((error) =>
+				toast.error('Not published\n' + error, {
+					position: 'bottom-right'
 				})
-				.catch((error) =>
-					toast.error('Not published\n' + error, {
-						position: 'bottom-right'
-					})
-				);
-		}
+			);
 	};
+	// };
 	// import { init as initNostrLogin } from 'nostr-login';
 	// import { launch as launchNostrLoginDialog } from 'nostr-login';
 
@@ -69,7 +69,7 @@
 	// 		startScreen: 'signup'
 	// 	});
 
-	// 	const user = await signin($ndk, $bunkerNdk!, SigninMethod.Nip46, token);
+	// const user = await signin($ndk, $bunkerNdk!, SigninMethod.Nip46, token);
 	// }
 </script>
 
@@ -110,9 +110,10 @@
 				{$_('signin.noKeys')}
 			</h5>
 			<p>{$_('signin.signupHelp')}</p>
+			<Button>Sign up</Button>
 			<Button href="https://flockstr.com/event/{event.encode()}"
-				>{$_('signin.flockstr')} <ArrowRightSolid class="ml-1" /></Button
-			>
+				>{$_('signin.flockstr')} <ArrowRightSolid class="ml-1" />
+			</Button>
 		</div>
 	{/if}
 </Modal>

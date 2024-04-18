@@ -48,17 +48,17 @@
 			</div>
 		</div>
 		<div class="mr-2">
-			<!-- <Button on:click={() => toggleRsvpModal()}>
+			<Button on:click={() => toggleRsvpModal()}>
 				{$_('meetup.rsvp')}
-			</Button> -->
+			</Button>
 			<!-- Disabled for dev mode -->
-			{#if canRsvp(event)}
+			<!-- {#if canRsvp(event)}
 				<Button on:click={() => toggleRsvpModal()}>
 					{$_('meetup.rsvp')}
 				</Button>
 			{:else}
 				<Button disabled>{$_('meetup.ended')}</Button>
-			{/if}
+			{/if} -->
 		</div>
 	</div>
 	<RsvpModal {event} {modalVisible} />

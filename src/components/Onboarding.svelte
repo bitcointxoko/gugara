@@ -73,7 +73,7 @@
 					<div class="my-4 pt-4">
 						<Button
 							class="mr-2"
-							href="https://habla.news/es/a/naddr1qqxnzd3e8qcr2wfn8qcrgwf4qy28wumn8ghj7un9d3shjtnyv9kh2uewd9hsygzenanl0hmkjnrq8fksvdhpt67xzrdh0h8agltwt5znsmvzr7e74ypsgqqqw4rsgt7cpp"
+							href="https://habla.news/es/a/naddr1qvzqqqr4gupzqkvlvlma7a55ccp6d5rrdc27h3ssmdmael286mjaq5uxmqslk04fqqxnzdesxcurvwfjxcmnwdfe3jddt2"
 							color="alternative">{$_('onboardingBitcoin.guide')}</Button
 						>
 						<Button href="https://btcpay.bitcointxoko.com/register"
