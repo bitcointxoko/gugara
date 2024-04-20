@@ -18,9 +18,9 @@
 
 	let response: string;
 
-	let L = ["L", "status"];
-	let l = [];
-	let a = [];
+	// let L = ["L", "status"];
+	// let l = [];
+	// let a = [];
 
 	const rsvp = async (event: NDKEvent) => {
 		// if ($currentUser) {
@@ -32,10 +32,16 @@
 		const kind31925 = new NDKEvent($ndk);
 		kind31925.kind = 31925;
 
-		l = ["l", response as string, "status"];
-		a = ["a", `${event.kind}:${event.author.pubkey}:${event.dTag}`];
+		// l = ["l", response as string, "status"];
+		// a = ["a", `${event.kind}:${event.author.pubkey}:${event.dTag}`];
 
-		kind31925.tags = [a, L, l];
+		// kind31925.tags = [a, L, l];
+
+		kind31925.tags = [
+			["L", "status"],
+			["l", response as string, "status"],
+			["a", `${event.kind}:${event.author.pubkey}:${event.dTag}`],
+		];
 
 		await kind31925
 			.publish()
@@ -43,7 +49,7 @@
 				toast.success("Published", {
 					position: "bottom-right",
 				});
-				goto(`/e/${kind31925.encode()}`);
+				goto(`/calendar/${event.encode()}`);
 			})
 			.catch((error) =>
 				toast.error("Not published\n" + error, {
