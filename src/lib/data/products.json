@@ -27,7 +27,8 @@
 		"action": "https://btcpay.bitcointxoko.com/apps/4RxS3NvGuRU2S55A9srXq3XENyoT/pos",
 		"choiceKey": "socks",
 		"price": "10,00",
-		"currency": "€"
+		"currency": "€",
+		"disabled": "false"
 	},
 	{
 		"name": "Calcetines x 3",
@@ -42,7 +43,8 @@
 		"action": "https://btcpay.bitcointxoko.com/apps/4RxS3NvGuRU2S55A9srXq3XENyoT/pos",
 		"choiceKey": "calcetines x 3",
 		"price": "25,00",
-		"currency": "€"
+		"currency": "€",
+		"disabled": "false"
 	},
 	{
 		"name": "Tarjeta NFC",
@@ -64,7 +66,8 @@
 		"action": "https://btcpay.bitcointxoko.com/apps/psvYP8PQeG3toagw8eUgG95Kwda/pos",
 		"choiceKey": "tarjeta nfc - ntag424 dna (pvc blanca)",
 		"price": "1.000",
-		"currency": "sats"
+		"currency": "sats",
+		"disabled": "true"
 	},
 	{
 		"name": "Kit BTClock",
@@ -106,7 +109,8 @@
 		"action": "https://btcpay.bitcointxoko.com/apps/psvYP8PQeG3toagw8eUgG95Kwda/pos",
 		"choiceKey": "kit btclock",
 		"price": "150.000",
-		"currency": "sats"
+		"currency": "sats",
+		"disabled": "false"
 	},
 	{
 		"name": "Pantallas e-Ink (x 7)",
@@ -120,7 +124,8 @@
 		"action": "https://btcpay.bitcointxoko.com/apps/315345vxVqUWLASyga7ZLW3tdxUa/pos",
 		"choiceKey": "e-ink-display",
 		"price": "54,39",
-		"currency": "€"
+		"currency": "€",
+		"disabled": "false"
 	},
 	{
 		"name": "S3 mini",
@@ -146,6 +151,7 @@
 		"action": "https://btcpay.bitcointxoko.com/apps/315345vxVqUWLASyga7ZLW3tdxUa/pos",
 		"choiceKey": "s3-mini",
 		"price": "6,72",
-		"currency": "€"
+		"currency": "€",
+		"disabled": "false"
 	}
 ]
