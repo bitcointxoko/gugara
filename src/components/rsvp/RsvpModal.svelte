@@ -3,7 +3,10 @@
 	import ndk from "$lib/stores/ndk";
 	import currentUser from "$lib/stores/currentUser";
 	import { Button, Modal, RadioButton } from "flowbite-svelte";
-	import { ArrowRightSolid, PapperPlaneSolid } from "flowbite-svelte-icons";
+	import {
+		ArrowRightOutline,
+		PaperPlaneSolid,
+	} from "flowbite-svelte-icons";
 	import { NDKEvent, NDKNip07Signer } from "@nostr-dev-kit/ndk";
 	import toast from "svelte-french-toast";
 	import { goto } from "$app/navigation";
@@ -112,7 +115,7 @@
 			{#if response}
 				<Button color="light" type="submit"
 					>{$_("meetup.confirm")}
-					<PapperPlaneSolid class="ml-1 h-3 w-3" /></Button
+					<PaperPlaneSolid class="ml-1 h-3 w-3" /></Button
 				>
 			{/if}
 		</form>
@@ -136,7 +139,7 @@
 			<!-- <Button>Sign up</Button> -->
 			<Button href="https://flockstr.com/event/{event.encode()}"
 				>{$_("signin.flockstr")}
-				<ArrowRightSolid class="ml-1" />
+				<ArrowRightOutline class="ml-1" />
 			</Button>
 		</div>
 	{/if}
