@@ -29,9 +29,6 @@ importers:
       lucide-svelte:
         specifier: ^0.372.0
         version: 0.372.0(svelte@4.2.15)
-      nostr-login:
-        specifier: ^1.1.1
-        version: 1.1.1(typescript@5.4.5)
       svelte-french-toast:
         specifier: ^1.2.0
         version: 1.2.0(svelte@4.2.15)
@@ -1736,9 +1733,6 @@ packages:
   normalize-range@0.1.2:
     resolution: {integrity: sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==}
     engines: {node: '>=0.10.0'}
-
-  nostr-login@1.1.1:
-    resolution: {integrity: sha512-MYO4T7ytgQwusDnhkPlpHK6Ymt5Xi6gR/MP1ld4XxtgBQGvcYfWuBu+wpeB9dgySkEjU4GISITHdkFiXvGGycw==}
 
   nostr-tools@1.17.0:
     resolution: {integrity: sha512-LZmR8GEWKZeElbFV5Xte75dOeE9EFUW/QLI1Ncn3JKn0kFddDKEfBbFN8Mu4TMs+L4HR/WTPha2l+PPuRnJcMw==}
@@ -4178,15 +4172,6 @@ snapshots:
   normalize-path@3.0.0: {}
 
   normalize-range@0.1.2: {}
-
-  nostr-login@1.1.1(typescript@5.4.5):
-    dependencies:
-      '@nostr-dev-kit/ndk': 2.8.1(typescript@5.4.5)
-      nostr-tools: 1.17.0(typescript@5.4.5)
-      tseep: 1.2.1
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
 
   nostr-tools@1.17.0(typescript@5.4.5):
     dependencies:

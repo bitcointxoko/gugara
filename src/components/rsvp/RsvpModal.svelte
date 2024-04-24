@@ -61,8 +61,6 @@
 			);
 	};
 	// };
-	// import { init as initNostrLogin } from 'nostr-login';
-	// import { launch as launchNostrLoginDialog } from 'nostr-login';
 
 	// import { bunkerNdk } from '$lib/stores/ndk';
 	// import { SigninMethod, signin } from '$lib/utils/auth';
@@ -71,14 +69,15 @@
 
 	// on your signup button click
 	// async function onSignupClick() {
-	// 	const nostrLogin = await import('nostr-login');
-	// 	const login = await nostrLogin.init({ darkMode: false });
-	// 	// launch signup screen
-	// 	nostrLogin.launch({
-	// 		startScreen: 'signup'
+	// 	const nostrLogin = await import("nostr-login");
+	// 	await nostrLogin.init({
+	// 		darkMode: false,
+	// 		startScreen: "signup",
 	// 	});
-
-	// const user = await signin($ndk, $bunkerNdk!, SigninMethod.Nip46, token);
+	// 	// launch signup screen
+	// 	// login.launch({
+	// 	// 	startScreen: "signup",
+	// 	// });
 	// }
 </script>
 
@@ -136,7 +135,7 @@
 				{$_("signin.noKeys")}
 			</h5>
 			<p>{$_("signin.signupHelp")}</p>
-			<!-- <Button>Sign up</Button> -->
+			<!-- <Button on:click={onSignupClick}>Sign up</Button> -->
 			<Button href="https://flockstr.com/event/{event.encode()}"
 				>{$_("signin.flockstr")}
 				<ArrowRightOutline class="ml-1" />

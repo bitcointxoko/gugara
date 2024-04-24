@@ -1,15 +1,23 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
-	import { onMount, onDestroy, beforeUpdate } from 'svelte';
-	import { afterNavigate } from '$app/navigation';
-	import { Zap } from 'lucide-svelte';
-	import ndk from '$lib/stores/ndk';
-	import currentUser from '$lib/stores/currentUser';
-	import { NDKEvent, NDKNip07Signer, zapInvoiceFromEvent } from '@nostr-dev-kit/ndk';
-	import type { NDKEventStore, ExtendedBaseType } from '@nostr-dev-kit/ndk-svelte';
-	import { Button, Label, Input, Modal } from 'flowbite-svelte';
-	import toast from 'svelte-french-toast';
-	import SigninAlert from '../signin/SigninAlert.svelte';
+	import { _ } from "svelte-i18n";
+	import { onMount, onDestroy, beforeUpdate } from "svelte";
+	import { afterNavigate } from "$app/navigation";
+	import { Zap } from "lucide-svelte";
+	import ndk from "$lib/stores/ndk";
+	import currentUser from "$lib/stores/currentUser";
+	import {
+		NDKEvent,
+		NDKNip07Signer,
+		zapInvoiceFromEvent,
+		type NDKFilter,
+	} from "@nostr-dev-kit/ndk";
+	import type {
+		NDKEventStore,
+		ExtendedBaseType,
+	} from "@nostr-dev-kit/ndk-svelte";
+	import { Button, Label, Input, Modal } from "flowbite-svelte";
+	import toast from "svelte-french-toast";
+	import SigninAlert from "../signin/SigninAlert.svelte";
 
 	export let event: NDKEvent;
 
@@ -23,7 +31,7 @@
 	let comment: string | undefined;
 
 	async function zap() {
-		const bc = await import('@getalby/bitcoin-connect');
+		const bc = await import("@getalby/bitcoin-connect");
 
 		if ($currentUser) {
 			if (!$ndk.signer) {
@@ -33,40 +41,47 @@
 			let zapRequest = await event?.zap(amount * 1000, comment);
 
 			if (!zapRequest) {
-				console.log('No payment request');
+				console.log("No payment request");
 				return;
 			}
 
 			try {
 				const webln = await bc.requestProvider();
-				webln
-					.sendPayment(zapRequest)
+				webln.sendPayment(zapRequest)
 					.then(() => {
-						toast.success('Zap successful!', {
-							position: 'bottom-right'
+						toast.success("Zap successful!", {
+							position: "bottom-right",
 						});
 						modalOpen = false;
 						alreadyZapped = true;
 					})
 					.catch((err: any) => {
 						console.error(err);
-						toast.error('Zap failed. \n' + err, {
-							position: 'bottom-right'
+						toast.error("Zap failed. \n" + err, {
+							position: "bottom-right",
 						});
 					});
 			} catch (error: any) {
 				console.log(error);
-				toast.error('Zap failed. \n' + error, {
-					position: 'bottom-right'
+				toast.error("Zap failed. \n" + error, {
+					position: "bottom-right",
 				});
 			}
 		}
 	}
 
-	zaps = $ndk.storeSubscribe({ kinds: [9735], '#e': [event.id] }, { closeOnEose: true });
+	let filter: NDKFilter = { kinds: [9735], "#e": [event.id] };
+
+	if (event.kind === 30023)
+		filter = {
+			kinds: [9735],
+			"#a": [`30023:${event.author.pubkey}:${event.dTag}`],
+		};
+
+	zaps = $ndk.storeSubscribe(filter);
 
 	onMount(() => {
-		zaps = $ndk.storeSubscribe({ kinds: [9735], '#e': [event.id] }, { closeOnEose: true });
+		zaps = $ndk.storeSubscribe(filter);
 	});
 
 	onDestroy(() => zaps?.unsubscribe());
@@ -74,13 +89,13 @@
 
 	afterNavigate(() => {
 		alreadyZapped = false;
-		zaps = $ndk.storeSubscribe({ kinds: [9735], '#e': [event.id] }, { closeOnEose: true });
+		zaps = $ndk.storeSubscribe(filter);
 	});
 
 	$: totalZaps = $zaps
 		.map((event) => {
 			const zapInvoice = zapInvoiceFromEvent(event as NDKEvent);
-			console.log(zapInvoice);
+			// console.log(zapInvoice);
 			alreadyZapped = zapInvoice?.zappee === $currentUser?.pubkey;
 			return (zapInvoice?.amount || 0) / 1000;
 		})
@@ -103,21 +118,26 @@
 		{totalZaps}
 	{/if}
 </button>
-<Modal title={$_('zap.title')} bind:open={modalOpen} class="z-30" size="xs">
+<Modal title={$_("zap.title")} bind:open={modalOpen} class="z-30" size="xs">
 	<div class="panel-contents flex flex-col gap-2">
 		{#if $currentUser}
 			<form on:submit|preventDefault={zap} class="grid gap-2">
 				<Label for="amount"
-					>{$_('zap.amount')}
-					<Input type="text" bind:value={amount} name="amount" required />
+					>{$_("zap.amount")}
+					<Input
+						type="text"
+						bind:value={amount}
+						name="amount"
+						required
+					/>
 				</Label>
 				<Label for="comment"
-					>{$_('zap.comment')}
+					>{$_("zap.comment")}
 					<Input
 						type="text"
 						bind:value={comment}
 						name="comment"
-						placeholder={$_('zap.commentPlaceholder')}
+						placeholder={$_("zap.commentPlaceholder")}
 					/>
 				</Label>
 				<Button type="submit" class="mt-1 w-full">
@@ -125,7 +145,7 @@
 						strokeWidth="2"
 						class="mr-2 h-4 w-4 fill-yellow-500 stroke-yellow-500 lg:h-5 lg:w-5"
 					/>
-					{$_('zap.action')}
+					{$_("zap.action")}
 				</Button>
 			</form>
 		{:else}

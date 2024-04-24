@@ -1,5 +1,5 @@
 {
-	"name": "gugara1.0",
+	"name": "gugara",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -51,7 +51,6 @@
 		"@nostr-dev-kit/ndk-svelte-components": "^2.2.15",
 		"latlon-geohash": "^2.0.0",
 		"lucide-svelte": "^0.372.0",
-		"nostr-login": "^1.1.1",
 		"svelte-french-toast": "^1.2.0",
 		"svelte-i18n": "^4.0.0"
 	}

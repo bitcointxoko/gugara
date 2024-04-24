@@ -26,19 +26,15 @@
 		class="items-center justify-center space-y-4 sm:flex sm:space-x-4 sm:space-y-0 rtl:space-x-reverse"
 	>
 		<Button on:click={() => (defaultModal = true)}
-			>{$_("onboardingBitcoin.start")}</Button
-		>
+			>{$_("onboardingBitcoin.start")}
+		</Button>
 		<Modal
 			title={$_("onboardingBitcoin.title")}
 			bind:open={defaultModal}
-			autoclose
 			outsideclose
 		>
-			<Tabs
-				style="full"
-				defaultClass="flex rounded-lg divide-x rtl:divide-x-reverse divide-gray-200 shadow dark:divide-gray-700"
-			>
-				<TabItem class="w-full divide-y" open>
+			<Tabs tabStyle="pill" defaultClass="flex rounded-lg">
+				<TabItem class="w-full" open>
 					<span slot="title"
 						>{$_("onboardingBitcoin.wallet")}</span
 					>
@@ -65,30 +61,28 @@
 								"onboardingBitcoin.guides"
 							)}<ChevronDownOutline
 								class="text-alternative ms-2 h-3 w-3"
-							/></Button
-						>
+							/>
+						</Button>
 						<Dropdown>
 							<DropdownItem
 								href="https://habla.news/es/a/naddr1qqxnzd3exuerqdp3xv6ngd3kqy28wumn8ghj7un9d3shjtnyv9kh2uewd9hsygzenanl0hmkjnrq8fksvdhpt67xzrdh0h8agltwt5znsmvzr7e74ypsgqqqw4rszszq8e"
 								>{$_(
 									"onboardingBitcoin.lnaddress"
-								)}</DropdownItem
-							>
+								)}
+							</DropdownItem>
 							<DropdownItem
 								href="https://habla.news/es/a/naddr1qqxnzd3exuerqdfkxccnyv3cqy28wumn8ghj7un9d3shjtnyv9kh2uewd9hsygzenanl0hmkjnrq8fksvdhpt67xzrdh0h8agltwt5znsmvzr7e74ypsgqqqw4rs6mxhd7"
 								>{$_(
 									"onboardingBitcoin.lndhub"
-								)}</DropdownItem
-							>
+								)}
+							</DropdownItem>
 						</Dropdown>
 						<Button href="https://bitcointxoko.com"
-							>{$_(
-								"onboardingBitcoin.wallet"
-							)}</Button
-						>
+							>{$_("onboardingBitcoin.wallet")}
+						</Button>
 					</div>
 				</TabItem>
-				<TabItem class="w-full divide-y">
+				<TabItem class="w-full">
 					<span slot="title"
 						>{$_("onboardingBitcoin.boltcard")}</span
 					>
@@ -110,13 +104,11 @@
 							)}</Button
 						>
 						<Button href="/shop"
-							>{$_(
-								"onboardingBitcoin.shop"
-							)}</Button
-						>
+							>{$_("onboardingBitcoin.shop")}
+						</Button>
 					</div>
 				</TabItem>
-				<TabItem class="w-full divide-y">
+				<TabItem class="w-full">
 					<span slot="title"
 						>{$_("onboardingBitcoin.shop")}</span
 					>
@@ -137,10 +129,8 @@
 						>
 						<Button
 							href="https://btcpay.bitcointxoko.com/register"
-							>{$_(
-								"onboardingBitcoin.register"
-							)}</Button
-						>
+							>{$_("onboardingBitcoin.register")}
+						</Button>
 					</div>
 				</TabItem>
 			</Tabs>
