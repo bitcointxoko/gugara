@@ -28,7 +28,7 @@
 		"choiceKey": "socks",
 		"price": "10,00",
 		"currency": "€",
-		"disabled": "false"
+		"disabled": false
 	},
 	{
 		"name": "Calcetines x 3",
@@ -44,7 +44,7 @@
 		"choiceKey": "calcetines x 3",
 		"price": "25,00",
 		"currency": "€",
-		"disabled": "false"
+		"disabled": false
 	},
 	{
 		"name": "Tarjeta NFC",
@@ -67,7 +67,7 @@
 		"choiceKey": "tarjeta nfc - ntag424 dna (pvc blanca)",
 		"price": "1.000",
 		"currency": "sats",
-		"disabled": "true"
+		"disabled": true
 	},
 	{
 		"name": "Kit BTClock",
@@ -110,7 +110,7 @@
 		"choiceKey": "kit btclock",
 		"price": "150.000",
 		"currency": "sats",
-		"disabled": "false"
+		"disabled": false
 	},
 	{
 		"name": "Pantallas e-Ink (x 7)",
@@ -125,7 +125,7 @@
 		"choiceKey": "e-ink-display",
 		"price": "54,39",
 		"currency": "€",
-		"disabled": "false"
+		"disabled": false
 	},
 	{
 		"name": "S3 mini",
@@ -152,6 +152,6 @@
 		"choiceKey": "s3-mini",
 		"price": "6,72",
 		"currency": "€",
-		"disabled": "false"
+		"disabled": false
 	}
 ]

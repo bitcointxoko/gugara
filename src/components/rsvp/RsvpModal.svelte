@@ -3,11 +3,8 @@
 	import ndk from "$lib/stores/ndk";
 	import currentUser from "$lib/stores/currentUser";
 	import { Button, Modal, RadioButton } from "flowbite-svelte";
-	import {
-		ArrowRightOutline,
-		PaperPlaneSolid,
-	} from "flowbite-svelte-icons";
-	import { NDKEvent, NDKNip07Signer } from "@nostr-dev-kit/ndk";
+	import { ArrowRightOutline } from "flowbite-svelte-icons";
+	import { NDKEvent } from "@nostr-dev-kit/ndk";
 	import toast from "svelte-french-toast";
 	import { goto } from "$app/navigation";
 	import SigninSelector from "../signin/SigninSelector.svelte";
@@ -15,30 +12,11 @@
 	export let event: NDKEvent;
 	export let modalVisible = false;
 
-	// function toggleRsvpModal() {
-	// 	modalVisible = !modalVisible;
-	// }
-
 	let response: string;
 
-	// let L = ["L", "status"];
-	// let l = [];
-	// let a = [];
-
 	const rsvp = async (event: NDKEvent) => {
-		// if ($currentUser) {
-		// 	if (!$ndk.signer) {
-		// 		const signer = new NDKNip07Signer();
-		// 		$ndk.signer = signer;
-		// 	}
-
 		const kind31925 = new NDKEvent($ndk);
 		kind31925.kind = 31925;
-
-		// l = ["l", response as string, "status"];
-		// a = ["a", `${event.kind}:${event.author.pubkey}:${event.dTag}`];
-
-		// kind31925.tags = [a, L, l];
 
 		kind31925.tags = [
 			["L", "status"],
@@ -60,34 +38,15 @@
 				})
 			);
 	};
-	// };
-
-	// import { bunkerNdk } from '$lib/stores/ndk';
-	// import { SigninMethod, signin } from '$lib/utils/auth';
-
-	// let token: string = '';
-
-	// on your signup button click
-	// async function onSignupClick() {
-	// 	const nostrLogin = await import("nostr-login");
-	// 	await nostrLogin.init({
-	// 		darkMode: false,
-	// 		startScreen: "signup",
-	// 	});
-	// 	// launch signup screen
-	// 	// login.launch({
-	// 	// 	startScreen: "signup",
-	// 	// });
-	// }
 </script>
 
 <Modal title="RSVP" bind:open={modalVisible}>
 	{#if $currentUser}
-		<h5
+		<!-- <h5
 			class="mr-auto mt-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
 		>
 			{$_("meetup.rsvp")}
-		</h5>
+		</h5> -->
 		<p>{$_("meetup.areYouComing")}</p>
 		<form
 			on:submit|preventDefault={() => rsvp(event)}
@@ -97,25 +56,26 @@
 				<RadioButton
 					bind:group={response}
 					value="accepted"
-					color="green">{$_("meetup.yes")}</RadioButton
-				>
+					color="green"
+					>{$_("meetup.yes")}
+				</RadioButton>
 				<RadioButton
 					bind:group={response}
 					value="tentative"
 					color="alternative"
-					>{$_("meetup.maybe")}</RadioButton
-				>
+					>{$_("meetup.maybe")}
+				</RadioButton>
 				<RadioButton
 					bind:group={response}
 					value="declined"
-					color="red">{$_("meetup.no")}</RadioButton
-				>
+					color="red"
+					>{$_("meetup.no")}
+				</RadioButton>
 			</div>
 			{#if response}
 				<Button color="light" type="submit"
 					>{$_("meetup.confirm")}
-					<PaperPlaneSolid class="ml-1 h-3 w-3" /></Button
-				>
+				</Button>
 			{/if}
 		</form>
 	{:else}

@@ -36,6 +36,17 @@ function setupI18n({ withLocale: _locale } = { withLocale: "en" }) {
 				attendees: "Attendees",
 				ended: "ended",
 			},
+			share: {
+				share: "Share",
+				embed: "Share on Nostr",
+				embedHelp:
+					"Copy the embed code which looks like nostr:nevent... or naddr...",
+				njump: "Share njump.me link",
+				njumpHelp:
+					"Share this link so your friend can open it in a nostr client of their choosing",
+				page: "Share page link",
+				pageHelp: "Copy the link to this event on our website",
+			},
 			mint: {
 				title: "Mint",
 				balance: "🥜 Balance",
@@ -171,6 +182,17 @@ function setupI18n({ withLocale: _locale } = { withLocale: "en" }) {
 				attendees: "Asistentes",
 				ended: "terminado",
 			},
+			share: {
+				share: "Compartir",
+				embed: "Compartir en Nostr",
+				embedHelp:
+					"Copiar la entidad que se parece a nostr:nevent... o naddr...",
+				njump: "Compartir el enlace njump.me",
+				njumpHelp:
+					"Comparte este enlace para que tu amigo pueda abrirlo en el cliente nostr de su elección",
+				page: "Compartir enlace",
+				pageHelp: "Copiar el enlace al evento en nuestro sitio web",
+			},
 			mint: {
 				title: "Mint",
 				balance: "🥜 Saldo",
@@ -280,6 +302,16 @@ function setupI18n({ withLocale: _locale } = { withLocale: "en" }) {
 			meetup: {
 				title: "Hurrengo bilera",
 				rsvp: "RSVP",
+			},
+			share: {
+				share: "Share",
+				embed: "Share on Nostr",
+				embedHelp:
+					"Copy the embed code which looks like nostr:nevent... or naddr...",
+				njump: "Share njump.me link",
+				njumpHelp: "",
+				page: "Share page link",
+				pageHelp: "Copy the link to this event on our website",
 			},
 			mint: {
 				title: "Mint",

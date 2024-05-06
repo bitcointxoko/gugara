@@ -18,14 +18,14 @@
 		else return false;
 	}
 
-	export function getTagValues(
+	export function getTagValue(
 		tags: string[][],
 		name: string
-	): string[] | null {
+	): string | null {
 		const found = tags.find((v) => v[0] === name);
 		if (!found) return null;
 		const [, ...values] = found;
-		return values[1];
+		return values[0];
 	}
 </script>
 
@@ -59,7 +59,7 @@
 				class="text-muted-bright mx-1 mb-3 text-sm font-light max-w-52 text-wrap text-balance"
 			>
 				{#if event.tagValue("location")}
-					📍 {getTagValues(event.tags, "location")}
+					📍 {getTagValue(event.tags, "location")}
 				{:else}
 					📍 <div
 						class="h-2 w-32 animate-pulse rounded-full bg-gray-300"
