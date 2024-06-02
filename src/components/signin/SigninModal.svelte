@@ -26,7 +26,12 @@
 </script>
 
 {#if signinVisible}
-	<Modal title={$_("signin.signin")} bind:open={signinVisible}>
+	<Modal
+		title={$_("signin.signin")}
+		bind:open={signinVisible}
+		class="bg-warm-50"
+		classHeader="bg-warm-50"
+	>
 		<h5
 			class="mr-auto mt-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
 		>

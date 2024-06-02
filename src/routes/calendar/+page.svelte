@@ -17,7 +17,7 @@
 
 	events = $ndk.storeSubscribe(
 		{
-			kinds: [31923],
+			kinds: [31923 as number],
 			authors: [PUBLIC_PUBKEY],
 		},
 		{ closeOnEose: true }
@@ -26,7 +26,7 @@
 	onMount(() => {
 		events = $ndk.storeSubscribe(
 			{
-				kinds: [31923],
+				kinds: [31923 as number],
 				authors: [PUBLIC_PUBKEY],
 			},
 			{ closeOnEose: true }
@@ -47,7 +47,11 @@
 	<section class="gap-6">
 		{#each $events as event}
 			<div class="my-4 space-y-4">
-				<Card size="lg" img={String(event.tagValue("image"))}>
+				<Card
+					size="lg"
+					img={String(event.tagValue("image"))}
+					class="bg-warm-50"
+				>
 					<h5
 						class=" mr-auto text-2xl font-bold tracking-tight text-gray-900 hover:text-gray-600 dark:text-white dark:hover:text-gray-300"
 					>

@@ -12,7 +12,6 @@
 		Listgroup,
 		ListgroupItem,
 		Modal,
-		Search,
 		Select,
 		Spinner,
 		Textarea,
@@ -33,14 +32,17 @@
 
 	if ($currentUser)
 		calendarStore = $ndk.storeSubscribe(
-			{ kinds: [31924], authors: [$currentUser.pubkey] },
+			{ kinds: [31924 as number], authors: [$currentUser.pubkey] },
 			{ closeOnEose: true }
 		);
 
 	onMount(() => {
 		if ($currentUser)
 			calendarStore = $ndk.storeSubscribe(
-				{ kinds: [31924], authors: [$currentUser.pubkey] },
+				{
+					kinds: [31924 as number],
+					authors: [$currentUser.pubkey],
+				},
 				{ closeOnEose: true }
 			);
 	});

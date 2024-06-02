@@ -13,11 +13,12 @@
 <svelte:head>
 	{#await $ndk.fetchEvent(data.event) then event}
 		{#if event}
-			<title>{event.tagValue("name")} - Bitcoin Txoko</title>
-			<meta
-				name="description"
-				content={`${event.tagValue("name")} - ${event.content}`}
-			/>
+			<title
+				>{event.tagValue("name")
+					? event.tagValue("name")
+					: event.tagValue("title")} - Bitcoin Txoko</title
+			>
+			<meta name="description" content={event.content} />
 		{/if}
 	{/await}
 </svelte:head>
@@ -26,7 +27,11 @@
 		<CardPlaceholder size="xxl" />
 	{:then event}
 		{#if event}
-			<Card size="lg" img={event.tagValue("image")}>
+			<Card
+				size="lg"
+				img={event.tagValue("image")}
+				class="bg-warm-50"
+			>
 				<h5
 					class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
 				>

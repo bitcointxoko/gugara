@@ -8,7 +8,6 @@
 		NDKEventStore,
 		ExtendedBaseType,
 	} from "@nostr-dev-kit/ndk-svelte";
-	import Popover from "./user/Popover.svelte";
 
 	export let event: NDKEvent;
 
@@ -16,7 +15,7 @@
 
 	responses = $ndk.storeSubscribe(
 		{
-			kinds: [31925],
+			kinds: [31925 as number],
 			"#a": [`${event.kind}:${event.author.pubkey}:${event.dTag}`],
 			"#l": ["accepted"],
 		},
@@ -26,7 +25,7 @@
 	onMount(() => {
 		responses = $ndk.storeSubscribe(
 			{
-				kinds: [31925],
+				kinds: [31925 as number],
 				"#a": [
 					`${event.kind}:${event.author.pubkey}:${event.dTag}`,
 				],
@@ -44,11 +43,11 @@
 {#if totalresponses > 0}
 	<h5 class="font-semibold">{$_("meetup.attendees")}</h5>
 	<div class="flex px-4 pb-2">
-		{#each $responses as response, i}
+		{#each $responses as response}
 			{#await response.author.fetchProfile() then profile}
-				<Avatar id="popover-{i}" stacked src={profile?.image} />
-				<!-- <Popover user={response.author} {i} /> -->
+				<Avatar stacked src={profile?.image} />
 			{/await}
+			<!-- {response.author.pubkey} -->
 		{/each}
 	</div>
 {/if}

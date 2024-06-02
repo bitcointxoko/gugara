@@ -4,7 +4,7 @@
 	import { _ } from '../services/i18n';
 </script>
 
-<Card href="/apps" class="flex flex-col justify-between">
+<Card href="/apps" class="bg-warm-50 flex flex-col justify-between">
 	<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 		{$_('apps.title')}
 	</h5>
@@ -13,7 +13,7 @@
 			{$_('apps.tooltip')}
 		</p>
 	</div>
-	<a href="/apps" class="mt-3 inline-flex items-center text-primary-600 hover:underline">
+	<a href="/apps" class="text-primary-600 mt-3 inline-flex items-center hover:underline">
 		{$_('apps.title').toLowerCase()}
 		<ArrowUpRightFromSquareOutline class="ms-2.5 h-3 w-3" />
 	</a>

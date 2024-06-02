@@ -29,7 +29,7 @@
 </script>
 
 <div class="mx-4 flex flex-col items-center gap-4 py-6">
-	<Card>
+	<Card class="bg-warm-50">
 		<Label>{$_('convert.price')}</Label>
 		<Input disabled bind:value={price} />
 

@@ -40,7 +40,12 @@
 	};
 </script>
 
-<Modal title="RSVP" bind:open={modalVisible}>
+<Modal
+	title="RSVP"
+	bind:open={modalVisible}
+	class="bg-warm-50"
+	classHeader="bg-warm-50"
+>
 	{#if $currentUser}
 		<!-- <h5
 			class="mr-auto mt-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"

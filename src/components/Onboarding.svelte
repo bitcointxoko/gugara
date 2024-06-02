@@ -13,7 +13,7 @@
 	let defaultModal = false;
 </script>
 
-<Card class="mt-2 text-center" size="lg" padding="xl">
+<Card class="mt-2 text-center bg-warm-50" size="lg" padding="xl">
 	<h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">
 		{$_("onboardingBitcoin.title")}
 	</h5>
@@ -32,6 +32,8 @@
 			title={$_("onboardingBitcoin.title")}
 			bind:open={defaultModal}
 			outsideclose
+			class="bg-warm-50"
+			classHeader="bg-warm-50"
 		>
 			<Tabs tabStyle="pill" defaultClass="flex rounded-lg">
 				<TabItem class="w-full" open>
@@ -103,7 +105,7 @@
 								"onboardingBitcoin.guide"
 							)}</Button
 						>
-						<Button href="/shop"
+						<Button href="/shop/tarjeta%20nfc%20-%20ntag424%20dna%20(pvc%20blanca)"
 							>{$_("onboardingBitcoin.shop")}
 						</Button>
 					</div>

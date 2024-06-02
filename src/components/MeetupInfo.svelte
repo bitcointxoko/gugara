@@ -20,12 +20,13 @@
 
 	export function getTagValue(
 		tags: string[][],
-		name: string
+		name: string,
+		position: number = 0
 	): string | null {
 		const found = tags.find((v) => v[0] === name);
 		if (!found) return null;
 		const [, ...values] = found;
-		return values[0];
+		return values[position];
 	}
 </script>
 
@@ -59,7 +60,9 @@
 				class="text-muted-bright mx-1 mb-3 text-sm font-light max-w-52 text-wrap text-balance"
 			>
 				{#if event.tagValue("location")}
-					📍 {getTagValue(event.tags, "location")}
+					📍 {getTagValue(event.tags, "location", 1)
+						? getTagValue(event.tags, "location", 1)
+						: getTagValue(event.tags, "location")}
 				{:else}
 					📍 <div
 						class="h-2 w-32 animate-pulse rounded-full bg-gray-300"
@@ -67,11 +70,12 @@
 				{/if}
 			</div>
 		</div>
-		<div class="mr-2">
+		<div class="mr-2 flex flex-col gap-2">
 			<!-- <Button on:click={() => toggleRsvpModal()}>
 				{$_('meetup.rsvp')}
 			</Button> -->
 			<!-- Disabled for dev mode -->
+
 			{#if canRsvp(event)}
 				<Button on:click={() => toggleRsvpModal()}>
 					{$_("meetup.rsvp")}

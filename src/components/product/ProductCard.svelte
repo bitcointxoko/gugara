@@ -18,7 +18,7 @@
 	};
 </script>
 
-<Card img={product.images[0].src} padding="none">
+<Card img={product.images[0].src} padding="none" class="bg-warm-50 ">
 	<div class="mt-2 px-5 pb-5">
 		<h5
 			class="text-xl font-semibold tracking-tight text-gray-900 hover:text-gray-600 dark:text-white dark:hover:text-gray-300"
