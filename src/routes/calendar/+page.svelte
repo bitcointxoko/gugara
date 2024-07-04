@@ -10,8 +10,9 @@
 	import { Card } from "flowbite-svelte";
 	import { EventContent } from "@nostr-dev-kit/ndk-svelte-components";
 	import type { NDKEvent } from "@nostr-dev-kit/ndk";
-	import Attendees from "../../components/Attendees.svelte";
+	// import Attendees from "../../components/Attendees.svelte";
 	import MeetupInfo from "../../components/MeetupInfo.svelte";
+	// import { Avatar } from "flowbite-svelte";
 
 	let events: NDKEventStore<ExtendedBaseType<NDKEvent>>;
 
@@ -20,7 +21,7 @@
 			kinds: [31923 as number],
 			authors: [PUBLIC_PUBKEY],
 		},
-		{ closeOnEose: true }
+		{ closeOnEose: true },
 	);
 
 	onMount(() => {
@@ -29,7 +30,7 @@
 				kinds: [31923 as number],
 				authors: [PUBLIC_PUBKEY],
 			},
-			{ closeOnEose: true }
+			{ closeOnEose: true },
 		);
 	});
 
@@ -62,7 +63,7 @@
 						</a>
 					</h5>
 					<MeetupInfo {event} />
-					<Attendees {event} />
+					<!-- <Attendees {event} /> -->
 					<p
 						class="mb-3 max-h-[125px] overflow-hidden font-normal leading-tight text-gray-700 dark:text-gray-400"
 					>
