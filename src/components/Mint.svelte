@@ -77,7 +77,7 @@
         <div
             class="flex pr-2 mt-2 mr-auto font-normal text-gray-500 align-bottom dark:text-gray-600"
         >
-            💀 Obsoleto: {retiredBalance}
+            {$_("mint.obsolete")}: {retiredBalance}
             <svg
                 data-v-52a72b4a=""
                 xmlns="http://www.w3.org/2000/svg"
