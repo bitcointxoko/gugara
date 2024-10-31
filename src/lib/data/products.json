@@ -110,7 +110,7 @@
 		"choiceKey": "kit btclock",
 		"price": "150.000",
 		"currency": "sats",
-		"disabled": false
+		"disabled": true
 	},
 	{
 		"name": "Pantallas e-Ink (x 7)",
@@ -125,7 +125,7 @@
 		"choiceKey": "e-ink-display",
 		"price": "54,39",
 		"currency": "€",
-		"disabled": false
+		"disabled": true
 	},
 	{
 		"name": "S3 mini",
@@ -152,6 +152,6 @@
 		"choiceKey": "s3-mini",
 		"price": "6,72",
 		"currency": "€",
-		"disabled": false
+		"disabled": true
 	}
 ]
