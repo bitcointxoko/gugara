@@ -67,7 +67,7 @@
 		"choiceKey": "tarjeta nfc - ntag424 dna (pvc blanca)",
 		"price": "1.000",
 		"currency": "sats",
-		"disabled": true
+		"disabled": false
 	},
 	{
 		"name": "Kit BTClock",
