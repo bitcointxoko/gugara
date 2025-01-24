@@ -15,16 +15,15 @@
 	const filter = {
 		kinds: [31925 as number],
 		"#a": [`${event.kind}:${event.author.pubkey}:${event.dTag}`],
-		"#l": ["accepted"],
+		"#status": ["accepted"],
 	};
 
 	responses = $ndk.storeSubscribe(
 		{
 			kinds: [31925 as number],
 			"#a": [`${event.kind}:${event.author.pubkey}:${event.dTag}`],
-			"#l": ["accepted"],
 		},
-		{ closeOnEose: false },
+		{ closeOnEose: true },
 	);
 
 	onMount(() => {
@@ -32,9 +31,8 @@
 			{
 				kinds: [31925 as number],
 				"#a": [`${event.kind}:${event.author.pubkey}:${event.dTag}`],
-				"#l": ["accepted"],
 			},
-			{ closeOnEose: false },
+			{ closeOnEose: true },
 		);
 	});
 
