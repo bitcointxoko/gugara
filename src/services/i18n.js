@@ -378,8 +378,8 @@ function setupI18n({ withLocale: _locale } = { withLocale: "en" }) {
         nutstash: "Nutstash",
         tooltip:
           "Mint bat ecash-erako banku baten antzekoa da, transakzio azkarrak eta pribatuak eskaintzen dituena",
-        rating: "balorazioa",
-        r: "balorazioak",
+        rating: "balorazio",
+        r: "balorazio",
         noDescription: "Mint ez zuen deskribapenik eman",
         eventNotFound: "Cashu mint ekitaldia aurkitu ez da.",
       },
