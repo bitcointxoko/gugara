@@ -6,7 +6,7 @@
 
 <section class="flex justify-center pl-10 mx-auto mb-2">
   <FooterButton
-    url="https://chachi.chat/groups.0xchat.com/0HpqXRy9s1oBWiA0"
+    url="https://chachi.chat/community.bitcointxoko.com/txoko"
     w="20"
     h="18"
     p="3"
