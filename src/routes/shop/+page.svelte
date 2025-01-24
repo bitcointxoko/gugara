@@ -11,7 +11,7 @@
 		content={`The shop of Bitcoin Txoko, buy our merch and other fun stuff.`}
 	/>
 </svelte:head>
-<main class="mx-4 my-4 flex flex-row flex-wrap items-start justify-center">
+<main class="flex flex-row flex-wrap justify-center items-center my-4 mx-4">
 	<section
 		class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
 	>

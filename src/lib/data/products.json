@@ -24,8 +24,8 @@
 			}
 		],
 		"description": "¡Ponte a la moda Bitcoin con nuestros calcetines de Bitcoin! 🧦 ¡Da pasos seguros con estilo mientras muestras tu amor por Bitcoin! 🚀",
-		"action": "https://btcpay.bitcointxoko.com/apps/4RxS3NvGuRU2S55A9srXq3XENyoT/pos",
-		"choiceKey": "socks",
+		"action": "https://btcpay.bitcointxoko.com/apps/4xToJK4VnWhw5sWAGiS1rxZdCW6/pos",
+		"choiceKey": "calcetines",
 		"price": "10,00",
 		"currency": "€",
 		"disabled": false
@@ -40,8 +40,8 @@
 			}
 		],
 		"description": "Presentamos nuestros nuevos calcetines Bitcoin, la forma más cómoda de caminar hacia el futuro financiero. 🧦 ¡Lleva consigo el espíritu de Satoshi en cada paso! 🚀 ",
-		"action": "https://btcpay.bitcointxoko.com/apps/4RxS3NvGuRU2S55A9srXq3XENyoT/pos",
-		"choiceKey": "calcetines x 3",
+		"action": "https://btcpay.bitcointxoko.com/apps/4xToJK4VnWhw5sWAGiS1rxZdCW6/pos",
+		"choiceKey": "calcetines-x-3",
 		"price": "25,00",
 		"currency": "€",
 		"disabled": false
@@ -63,8 +63,8 @@
 			}
 		],
 		"description": "Un chip NXP NTAG424 DNA dentro de una tarjeta NFC PVC blanca. ",
-		"action": "https://btcpay.bitcointxoko.com/apps/psvYP8PQeG3toagw8eUgG95Kwda/pos",
-		"choiceKey": "tarjeta nfc - ntag424 dna (pvc blanca)",
+		"action": "https://btcpay.bitcointxoko.com/apps/41wJSH8CL4aMBzUa7UpnAKH1NcEz/pos",
+		"choiceKey": "boltcard",
 		"price": "1.000",
 		"currency": "sats",
 		"disabled": false
