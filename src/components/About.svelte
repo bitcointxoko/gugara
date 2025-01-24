@@ -16,11 +16,7 @@
 		<a id="popover-0" href="/u/{user.npub}"
 			><span class="font-bold decoration-dotted hover:underline">{PUBLIC_NAME}</span>
 		</a>
-		{$_("about.body1")}
-		<span class="text-orange-500">{$_("about.bitcoiners")}</span>
-		{$_("about.body2")}
-		<span class="text-purple-500">{$_("about.nostr")}</span> 
-		{$_("about.body3")}
+		{$_("about.body")}
 	</p>
 	<Popover {user} />
 </Card>
