@@ -3,7 +3,7 @@ import { browser } from "$app/environment";
 import type { NDKCacheAdapter } from "@nostr-dev-kit/ndk";
 import NDKCacheAdapterDexie from "@nostr-dev-kit/ndk-cache-dexie";
 import NDKSvelte from "@nostr-dev-kit/ndk-svelte";
-import NDK from "@nostr-dev-kit/ndk";
+import NDK, { NDKRelayAuthPolicies } from "@nostr-dev-kit/ndk";
 import { writable } from "svelte/store";
 
 let relayUrls: string[];
@@ -26,26 +26,35 @@ if (browser) {
   cacheAdapter = new NDKCacheAdapterDexie({ dbName: "gugara" });
 }
 
-export const ndkStore = new NDKSvelte({
-  // explicitRelayUrls: [
-  // "wss://purplepag.es",
-  // "wss://relay.nostr.band",
-  // "wss://nos.lol",
-  // 'wss://relay.snort.social',
-  // "wss://relay.damus.io",
-  // "wss://nostr.wine",
-  // "wss://bostr.bitcointxoko.com",
-  // "ws://localhost:8080",
-  // ],
+// export const ndkStore = new NDKSvelte({
+// explicitRelayUrls: [
+// "wss://purplepag.es",
+// "wss://relay.nostr.band",
+// "wss://nos.lol",
+// 'wss://relay.snort.social',
+// "wss://relay.damus.io",
+// "wss://nostr.wine",
+// "wss://bostr.bitcointxoko.com",
+// "ws://localhost:8080",
+// ],
+// explicitRelayUrls: relayUrls,
+// cacheAdapter: cacheAdapter,
+// });
+
+// ndkStore.connect().then(() => console.log("NDK Connected"));
+
+// Create a singleton instance that is the default export
+// const ndk = writable(ndkStore);
+const ndkStore = new NDKSvelte({
   explicitRelayUrls: relayUrls,
-  outboxRelayUrls: ["wss://purplepag.es"],
-  enableOutboxModel: false,
   cacheAdapter: cacheAdapter,
+});
+ndkStore.relayAuthDefaultPolicy = NDKRelayAuthPolicies.signIn({
+  ndk: ndkStore,
 });
 
 ndkStore.connect().then(() => console.log("NDK Connected"));
 
-// Create a singleton instance that is the default export
 const ndk = writable(ndkStore);
 
 export const bunkerNDKStore = new NDK({
