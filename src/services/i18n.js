@@ -1,7 +1,7 @@
 import { dictionary, locale, _ } from "svelte-i18n";
-import en from "./en.json";
-import es from "./es.json";
-import eu from "./eu.json";
+import en from "./locales/en/common.json";
+import es from "./locales/es/common.json";
+import eu from "./locales/eu/common.json";
 function setupI18n({ withLocale: _locale } = { withLocale: "en" }) {
   dictionary.set({
     en: en,
