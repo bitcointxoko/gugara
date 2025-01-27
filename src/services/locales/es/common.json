@@ -85,7 +85,7 @@
 		"visit": "visitar app"
 	},
 	"user": {
-		"title": "Perfil",
+		"profile": "Profile",
 		"openInClient": "Abrir en cliente",
 		"follow": "Seguir",
 		"followers": "Seguidores",
