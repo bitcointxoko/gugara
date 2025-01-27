@@ -8,7 +8,12 @@
 	"sats": "satoshiak",
 	"about": {
 		"welcome": "Ongi etorri! 🤙",
-		"body": "irekierako eta ikaskuntzako espazio bat da. Nahiko modu espontaneo batean sortu zen, batez ere nostr izeneko mirari horren bidez konektatuta egon ziren bitcoinero batzuk elkartzean, ezagutzak eta esperientziak partekatuz elkar ikasteko ikaskuntza eta tresnen erabileraren bidez. Estruktura definiturik ez dago, elkarrekin konektatuta egoten saiatzen gara, bai linean, bai aldizkako bileretako topaketetan. Alde batetik, bakoitzak egiten ari garena komentatzen dugu eta zer gaien inguruan hitz egin beharko genukeen, eta bestetik, bileretako topaketetan aurrerapenak komentatzen ditugu eta zehaztu dugun gaien inguruan hitz egiten dugu. Harreman etengabeak lankidetza ahalbidetzen du, taldearen barruan beharrak konpontzen, bakoitzak ahal duen guztia ekartzen du eta horrela, denon eskura dagoen azpiegitura sortzen da."
+		"body": "irekierako eta ikaskuntzako espazio bat da. Nahiko modu espontaneo batean sortu zen, batez ere nostr izeneko mirari horren bidez konektatuta egon ziren bitcoinero batzuk elkartzean, ezagutzak eta esperientziak partekatuz elkar ikasteko ikaskuntza eta tresnen erabileraren bidez. Estruktura definiturik ez dago, elkarrekin konektatuta egoten saiatzen gara, bai linean, bai aldizkako bileretako topaketetan. Alde batetik, bakoitzak egiten ari garena komentatzen dugu eta zer gaien inguruan hitz egin beharko genukeen, eta bestetik, bileretako topaketetan aurrerapenak komentatzen ditugu eta zehaztu dugun gaien inguruan hitz egiten dugu. Harreman etengabeak lankidetza ahalbidetzen du, taldearen barruan beharrak konpontzen, bakoitzak ahal duen guztia ekartzen du eta horrela, denon eskura dagoen azpiegitura sortzen da.",
+		"bitcoiners": "bitcoiners",
+		"nostr": "nostr",
+		"body1": " es un espacio abierto de intercambio y aprendizaje. Surgió de manera bastante espontánea al juntarse unos pocos",
+		"body2": " mayormente a través de esa maravilla que es",
+		"body3": " para estar conectados compartiendo conocimientos y experiencias para aprender los unos de los otros mediante el estudio y el uso de herramientas. No hay una estructura definida, nos basamos en permanecer conectados entre nosotros tanto en línea como en encuentros periódicos.Por un lado vamos comentando lo que vamos haciendo cada uno de nosotros y sobre lo que nos vendría bien hablar y por otro hacemos puestas en común en los encuentros comentando avances y hablando sobre algo que hayamos concretado. El contacto permanente posibilita la cooperación resolviendo necesidades dentro del propio grupo, cada uno aporta lo que puede y se va creando esa infrastuctura a disposicion de todos."
 	},
 	"signin": {
 		"signin": "Hasi saioa",
