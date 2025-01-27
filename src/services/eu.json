@@ -1,0 +1,144 @@
+{
+	"locale": {
+		"short": "EU",
+		"long": "es-ES"
+	},
+	"details": "Xehetasunak",
+	"home": "Hasiera",
+	"sats": "satoshiak",
+	"about": {
+		"welcome": "Ongi etorri! 🤙",
+		"body": "irekierako eta ikaskuntzako espazio bat da. Nahiko modu espontaneo batean sortu zen, batez ere nostr izeneko mirari horren bidez konektatuta egon ziren bitcoinero batzuk elkartzean, ezagutzak eta esperientziak partekatuz elkar ikasteko ikaskuntza eta tresnen erabileraren bidez. Estruktura definiturik ez dago, elkarrekin konektatuta egoten saiatzen gara, bai linean, bai aldizkako bileretako topaketetan. Alde batetik, bakoitzak egiten ari garena komentatzen dugu eta zer gaien inguruan hitz egin beharko genukeen, eta bestetik, bileretako topaketetan aurrerapenak komentatzen ditugu eta zehaztu dugun gaien inguruan hitz egiten dugu. Harreman etengabeak lankidetza ahalbidetzen du, taldearen barruan beharrak konpontzen, bakoitzak ahal duen guztia ekartzen du eta horrela, denon eskura dagoen azpiegitura sortzen da."
+	},
+	"signin": {
+		"signin": "Hasi saioa",
+		"signout": "Amaitu saioa",
+		"extension": "Luzapena",
+		"extensionHelp": "Hasi saioa nostr luzapena bat erabiliz.",
+		"nostrConnect": "Nostr Connect",
+		"nostrConnectHelp": "NIP-46 urruneko sinatzaile batek zure gako pribatua leku bakar batean seguru mantentzea eta Nostr gertaerak urrunetik sinatzea ahalbidetzen du. Sortu gertaera-baimen osoak dituen token bat eta sartu behean. Hau behin bakarrik egin beharko duzu.",
+		"token": "Token",
+		"submit": "Bidali",
+		"haveKeys": "Dagoeneko nostr giltzak ditut.",
+		"noKeys": "Oraindik ez dauzkat nostr giltzak",
+		"signup": "Eman izena",
+		"signupHelp": "Eman izena posta elektronikoz flockstr-en.",
+		"flockstr": "Flockstr"
+	},
+	"meetup": {
+		"title": "Hurrengo bilera",
+		"rsvp": "RSVP",
+		"areYouComing": "Etorri al zara?",
+		"yes": "Bai",
+		"maybe": "Agian",
+		"no": "Ez",
+		"confirm": "Baieztatu",
+		"attendees": "Bertaratutakoak",
+		"ended": "amaitu zen"
+	},
+	"share": {
+		"share": "Partekatu",
+		"embed": "Partekatu nostr-en",
+		"embedHelp": "Kopiatu txertatze-kodea, nostr:event... edo nostr:naddr... itxura duena.",
+		"njump": "Partekatu njump.me esteka",
+		"njumpHelp": "Partekatu esteka hau zure lagunak bere aukerako nostr bezero batean ireki dezan.",
+		"page": "Partekatu orriaren esteka",
+		"pageHelp": "Kopiatu ekitaldi honen esteka gure webgunean."
+	},
+	"mint": {
+		"title": "Mint",
+		"balance": "🥜 Saldoa",
+		"obsolete": "💀 Zaharkitua",
+		"nutstash": "Nutstash",
+		"tooltip": "Mint bat ecash-erako banku baten antzekoa da, transakzio azkarrak eta pribatuak eskaintzen dituena",
+		"rating": "balorazio",
+		"r": "balorazio",
+		"noDescription": "Mint ez zuen deskribapenik eman",
+		"eventNotFound": "Cashu mint ekitaldia aurkitu ez da."
+	},
+	"nodes": {
+		"channels": "Kanalak: ",
+		"capacity": "Edukiera: ",
+		"tooltip": "Hau da gure nodoa Lightning sarean"
+	},
+	"shop": {
+		"title": "Denda",
+		"buy": "Erosi",
+		"currencySymbol": "€",
+		"soldOut": "Agortuta"
+	},
+	"articles": {
+		"title": "Artikuluak",
+		"minRead": "minutuko irakurketa"
+	},
+	"calendar": {
+		"title": "Egutegia"
+	},
+	"apps": {
+		"title": "Aplikazioak",
+		"tooltip": "Begiratu gure aplikazio autohostatu guztiak",
+		"visit": "bisitatu aplikazioa"
+	},
+	"user": {
+		"profile": "Profila",
+		"openInClient": "Ireki bezeroan",
+		"follow": "Jarraitu",
+		"followers": "Jarraitzaileak",
+		"following": "Following"
+	},
+	"zap": {
+		"title": "Zap",
+		"amount": "Kopurua",
+		"comment": "Iruzkina",
+		"commentPlaceholder": "Zaparen iruzkina",
+		"action": "Zap"
+	},
+	"relays": {
+		"title": "Erreleiak",
+		"tooltip": "Ba al zenekien webgune honen zati handi bat nostr-en dagoela? Erreleia nostr protokoloan datuak gordetzen diren tokia da"
+	},
+	"convert": {
+		"title": "Bihurtu",
+		"price": "Prezioa",
+		"euro": "Euro",
+		"sats": "Satoshi"
+	},
+	"onboardingBitcoin": {
+		"title": "Bitcoinekin hasteko",
+		"description": "Bitcoin Txokon uste dugu bitcoin-i buruz ikasteko modurik onena hura erabiltzea, gastatzea eta, are hobeto, irabaztea dela. Zorro bat eta denda bat konfiguratzeko 10 minutu besterik ez dira behar Lightning Network-en transakzioak egiten hasteko Bitcoin Txokorekin.",
+		"start": "Hasi",
+		"guide": "Gida",
+		"guides": "Gidak",
+		"wallet": "Zorroa",
+		"walletDescription": "Lightning zorro batek Bitcoin transakzio azkarrak egiteko aukera ematen dizu, komisio baxuekin. Bitcoin Txokok Lightning zorro bat eskaintzen du doan. Gainera, BTCPay zerbitzariaren dendarekin integratzen da, geroago bat konfiguratu nahi duzunean. Kontuan izan zaintza-zorroak Bitcoin Txoko zure funtsen zaintzaile dela esan nahi duela. Autozaintza hartzeko prest zaudenean, autozaintza-zorro batera alda zaitezke, hala nola Phoenix.",
+		"lnaddress": "Lightning Address",
+		"lndhub": "LNDhub",
+		"boltcard": "BoltCard",
+		"boltcardDescription": "BoltCard bat Lightning Sarea erabiltzeko zordunketa-txartel baten antzekoa da. Diru-funtsak kargatu eta NFC irakurgailuetan txartela ukituz gastatu dezakezu. Aurreko urratsean LNbits-ekin Lightning zorro bat konfiguratu ondoren, BoltCard bat sortzeko minutu gutxi batzuk besterik ez dira behar. NFC txartel bat eros dezakezu gure dendatik. Ikusi gure konfigurazio-gida nola konfiguratu jakiteko.",
+		"shop": "Denda",
+		"shopDescription": "BTCPay zerbitzariarekin denda bat sor dezakezu zure ondasunak eta zerbitzuak Bitcoin truke saltzen hasteko, Salmenta Puntua edo online denda bat sortu nahi duzun ala ez. Zure dagoeneko dagoen zorroa konekta dezakezu Lightning bidez transakzioak jasotzeko. Halaber, katean dagoen zorro bat lotu dezakezu transakzio handiagoetarako. Konfiguratzea minutu gutxi batzuk besterik ez da behar. Ikusi gure gida xehetasun gehiagorako.",
+		"register": "Erregistratu"
+	},
+	"admin": {
+		"newEvent": "Gertaera berria",
+		"title": "Gertaeraren izenburua",
+		"image": "Irudia",
+		"upload": "Kargatu",
+		"noFiles": "Fitxategirik ez",
+		"start": "Hasiera",
+		"end": "Amaiera",
+		"timeZone": "Ordu eremua",
+		"calendar": "Egutegia",
+		"locationName": "Kokapen izena",
+		"locationAddress": "Kokapen helbidea",
+		"latitude": "Latitudea",
+		"longitude": "Luzera",
+		"geohash": "Geohash",
+		"getHash": "Lortu hash",
+		"description": "Deskribapena",
+		"submit": "Bidali"
+	},
+	"footer": {
+		"made": "💜-ekin eta ⚡️-ekin egina"
+	}
+}
