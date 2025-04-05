@@ -1,6 +1,7 @@
 {
 	"locale": {
-		"long": "es-ES"
+		"long": "es-ES",
+		"short": "ES"
 	},
 	"details": "Detalles",
 	"home": "Inicio",

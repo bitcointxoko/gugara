@@ -1,6 +1,7 @@
 {
 	"locale": {
-		"long": "es-ES"
+		"long": "es-ES",
+		"short": "EU"
 	},
 	"details": "Xehetasunak",
 	"home": "Hasiera",
